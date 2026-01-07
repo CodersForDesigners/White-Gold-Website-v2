@@ -1,103 +1,116 @@
-
 /**
  |
  | Live Gold Form
  |
  |
  */
-$( function () {
+$(function () {
 
-// Imports
-let BFSForm = window.__BFS.exports.BFSForm
+    // Imports
+    let BFSForm = window.__BFS.exports.BFSForm;
 
-// Set up the namespace
-window.__BFS = window.__BFS || { };
-window.__BFS.UI = window.__BFS.UI || { };
+    // Set up the namespace
+    window.__BFS = window.__BFS || {};
+    window.__BFS.UI = window.__BFS.UI || {};
 
+    let liveGoldForm = new BFSForm(".js_live_gold_form");
 
+    /*
+     | Phone number field
+     */
+    liveGoldForm.addField(
+        "phoneNumber",
+        [".js_form_input_phone_country_code", ".js_form_input_phone_number"],
+        function (values) {
+            let [phoneCountryCode, phoneNumberLocal] = values;
+            return BFSForm.validators.phoneNumber(
+                phoneCountryCode,
+                phoneNumberLocal
+            );
+        }
+    );
 
+    /*
+     | Submit handler (API + BFS flow)
+     */
+    liveGoldForm.submit = async function submit(data) {
 
+        let phone = data.phoneNumber;
 
-let liveGoldForm = new BFSForm( ".js_live_gold_form" );
+        // ---- EXISTING BFS / CUPID LOGIC (UNCHANGED) ----
+        let person = Cupid.getCurrentPerson(phone);
+        person.setSourcePoint("Live Gold Form");
 
-// Set up the form's input fields, data validators and data assemblers
-	// Phone number
-liveGoldForm.addField( "phoneNumber", [ ".js_form_input_phone_country_code", ".js_form_input_phone_number" ], function ( values ) {
-	let [ phoneCountryCode, phoneNumberLocal ] = values
-	return BFSForm.validators.phoneNumber( phoneCountryCode, phoneNumberLocal )
-} );
+        Cupid.logPersonIn(person, { trackSlug: "live-gold-form" });
 
+        let interest = "Live Gold Rate";
+        if (!person.hasInterest(interest)) {
+            person.setInterests(interest);
+            Cupid.savePerson(person);
+            PersonLogger.registerInterest(person);
+        }
 
+        const sessionDurationLimit =
+            window.__BFS.CONF.goldRates.sessionDurationLimit;
 
-liveGoldForm.submit = async function submit ( data ) {
-	let person = Cupid.getCurrentPerson( data.phoneNumber )
-	person.setSourcePoint( "Live Gold Form" )
+        if (
+            person.sessionHasExpiredOrNotEvenBegun(
+                "liveGoldRate",
+                sessionDurationLimit
+            )
+        ) {
+            person.startSession("liveGoldRate");
+        }
 
-	Cupid.logPersonIn( person, { trackSlug: "live-gold-form" } )
+        // ---- API CALL ----
+        const formData = new FormData();
+        formData.append("mobile", phone);
 
-	let interest = "Live Gold Rate"
-	if ( ! person.hasInterest( interest ) ) {
-		person.setInterests( interest )
-		Cupid.savePerson( person )
-		PersonLogger.registerInterest( person )
-	}
+        const response = await fetch("/cms/wp-content/themes/braun/sell-gold-lead.php", {
+            method: "POST",
+            body: formData
+        });
 
-	// Start a fresh session
-	const sessionDurationLimit = window.__BFS.CONF.goldRates.sessionDurationLimit
-	if ( person.sessionHasExpiredOrNotEvenBegun( "liveGoldRate", sessionDurationLimit ) )
-		person.startSession( "liveGoldRate" )
+        const result = await response.json();
 
-	return Promise.resolve()
-}
+        if (!result.success) {
+            throw new Error(result.message || "Submission failed");
+        }
 
+        // ✅ SUCCESS → allow BFS flow to continue
+        return Promise.resolve();
+    };
 
+    /*
+     | Form submission handler
+     */
+    $(document).on("submit", ".js_live_gold_form", function (event) {
 
-/**
- | Form submission handler
- |
- */
-$( document ).on( "submit", ".js_live_gold_form", function ( event ) {
+        event.preventDefault();
 
-	/*
-	 | Prevent default browser behaviour
-	 */
-	event.preventDefault();
+        liveGoldForm.disable();
+        liveGoldForm.giveFeedback("Sending...");
 
-	/*
-	 | Prevent interaction with the form
-	 */
-	liveGoldForm.disable();
+        let data;
+        try {
+            data = liveGoldForm.getData();
+        } catch (error) {
+            alert(error.message);
+            console.error(error.message);
+            liveGoldForm.enable();
+            liveGoldForm.fields[error.fieldName].focus();
+            liveGoldForm.setSubmitButtonLabel();
+            return;
+        }
 
-	/*
-	 | Provide feedback to the user
-	 */
-	liveGoldForm.giveFeedback( "Sending..." );
+        liveGoldForm
+            .submit(data)
+            .then(window.__BFS.runUserFlow)
+            .catch(function (error) {
+                alert(error.message);
+                liveGoldForm.enable();
+                liveGoldForm.setSubmitButtonLabel();
+            });
+    });
 
-	/*
-	 | Extract data (and report issues if found)
-	 */
-	var data;
-	try {
-		data = liveGoldForm.getData();
-	} catch ( error ) {
-		alert( error.message )
-		console.error( error.message )
-		liveGoldForm.enable();
-		liveGoldForm.fields[ error.fieldName ].focus()
-		liveGoldForm.setSubmitButtonLabel();
-		return;
-	}
-
-	/*
-	 | Submit data
-	 */
-	liveGoldForm.submit( data )
-		.then( window.__BFS.runUserFlow )
-
-} );
-
-
-
-
-
-} );
+});

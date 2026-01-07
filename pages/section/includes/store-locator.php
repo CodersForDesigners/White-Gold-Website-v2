@@ -44,7 +44,7 @@ $branchesInRegion = Branches::getByRegion( REGION );
 <section class="branch-section find-branch-section">
 <div class="container-fluid container-lg">
 <div class="text-center mt-4 mb-4">
-    <h2>Our Store Locator</h2>
+    <h2>Our Branch Locator</h2>
 </div><div class="branch-listing space-200-bottom">
 <div class="branch-slider">
 
@@ -64,7 +64,7 @@ $branchesInRegion = Branches::getByRegion( REGION );
 								</div>
 								<a class="gmaps-link button fill-blue-1" href="<?= $branch->get( 'google_maps' ) ?>" target="_blank">
 									<span class="button-label">Open in Maps&nbsp;</span>
-									<img class="button-icon tall" src="/media/icon/gmaps-tall-color.svg<?php echo $ver ?>">
+									<img class="button-icon tall" src="/media/icon/gmaps-tall-color.svg<?php echo $ver ?>" alt="map-icon" title="map-location">
 								</a>
 							</div>
 							<!-- END: Branch --></div>

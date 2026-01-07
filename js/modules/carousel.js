@@ -1,141 +1,103 @@
-
 ( function () {
 
+    var autoScrollInterval = 5000;  // 5 seconds
+    var autoScrollTimer;
 
+    /*
+     * This function scrolls the carousel automatically
+     */
+    function autoScrollCarousel() {
+        $(".js_carousel_container").each(function () {
+            var domCarouselContent = $(this).find(".js_carousel_content").get(0);
+            var $carouselItem = $(domCarouselContent).find(".js_carousel_item");
+            var scrollOffset = domCarouselContent.scrollLeft;
+            var newScrollOffset = scrollOffset + $carouselItem.width();
+            var maxScroll = domCarouselContent.scrollWidth - domCarouselContent.clientWidth;
 
+            // Reset scroll to beginning if reached the end
+            if (newScrollOffset >= maxScroll) {
+                newScrollOffset = 0;
+            }
 
+            try {
+                domCarouselContent.scrollTo({ left: newScrollOffset, behavior: "smooth" });
+            } catch (e) {
+                domCarouselContent.scrollTo(newScrollOffset, 0);
+            }
 
-/*
- *
- * This handles the interaction of the arrow buttons on either side of the
- * 	carousel.
- *
- */
-$( document ).on( "click", ".js_carousel_container .js_pager", function ( event ) {
+            hideOrShowCarouselButtons(domCarouselContent, newScrollOffset);
+        });
+    }
 
-	/*
-	 * 1. Get references to all the relevant elements
-	 */
-	var $carouselArrowButton = $( event.currentTarget );
-	var domCarouselContent = $carouselArrowButton
-				.closest( ".js_carousel_container" )
-				.find( ".js_carousel_content" )
-				.get( 0 );
+    // Start auto-scrolling
+    autoScrollTimer = setInterval(autoScrollCarousel, autoScrollInterval);
 
-	/*
-	 * 2. Figure out the "current" carousel item, i.e. the one that's in the center
-	 */
-	// var { top, left, width, height } = domCarouselContent.getBoundingClientRect();
-	// var contentXMidpoint = left + width / 2;
-	// var contentYMidpoint = top + height / 2;
-	// var domCurrentItem = document.elementFromPoint( contentXMidpoint, contentYMidpoint );
-	// var $currentItem;
-	// if ( domCurrentItem )
-	// 	$currentItem = $( domCurrentItem ).closest( ".js_carousel_item" );
+    /*
+     * This handles the interaction of the arrow buttons on either side of the carousel.
+     */
+    $(document).on("click", ".js_carousel_container .js_pager", function (event) {
+        clearInterval(autoScrollTimer);  // Stop auto-scrolling when user interacts
+        autoScrollTimer = setInterval(autoScrollCarousel, autoScrollInterval);  // Restart auto-scrolling after interaction
 
-	/*
-	 * 3. Get the "next" carousel item in the sequence
-	 * 	This could be either the preceeding or the following item,
-	 * 	depending on the arrow's direction.
-	 */
-	// var $nextItem;
-	var scrollDirection = $carouselArrowButton.data( "dir" );
-	// if ( scrollDirection == "left" )
-	// 	$nextItem = $currentItem.prev( ".js_carousel_item" );
-	// else
-	// 	$nextItem = $currentItem.next( ".js_carousel_item" );
+        var $carouselArrowButton = $(event.currentTarget);
+        var domCarouselContent = $carouselArrowButton.closest(".js_carousel_container").find(".js_carousel_content").get(0);
+        var scrollDirection = $carouselArrowButton.data("dir");
+        var scrollOffset = domCarouselContent.scrollLeft;
+        var newScrollOffset;
+        var $carouselItem = $(domCarouselContent).find(".js_carousel_item");
 
-	/*
-	 * 4. Get the amount of scroll that has to be done to center the next item
-	 */
-	// var scrollOffset;
-	// if ( $nextItem.length )
-	// 	scrollOffset = ( $nextItem.get( 0 ).offsetLeft + $nextItem.innerWidth() / 2 )
-	// 					- ( width / 2 );
-	// else	// there is no "next" item because the current one is at the boundary
-	// 	return;
+        if (scrollDirection == "left")
+            newScrollOffset = scrollOffset - $carouselItem.width();
+        else
+            newScrollOffset = scrollOffset + $carouselItem.width();
 
-	var scrollOffset = domCarouselContent.scrollLeft;
-	var newScrollOffset;
-	var $carouselItem = $( domCarouselContent ).find( ".js_carousel_item" );
-	if ( scrollDirection == "left" )
-		newScrollOffset = scrollOffset - $carouselItem.width();
-	else
-		newScrollOffset = scrollOffset + $carouselItem.width();
+        try {
+            domCarouselContent.scrollTo({ left: newScrollOffset, behavior: "smooth" });
+        } catch (e) {
+            domCarouselContent.scrollTo(newScrollOffset, 0);
+        }
 
-	/*
-	 * 5. Finally, scroll the carousel.
-	 */
-	try {
-		domCarouselContent.scrollTo( { left: newScrollOffset, behavior: "smooth" } );
-	}
-	catch ( e ) {
-		domCarouselContent.scrollTo( newScrollOffset, 0 );
-	}
+        hideOrShowCarouselButtons(domCarouselContent, newScrollOffset);
+    });
 
-	hideOrShowCarouselButtons( domCarouselContent, newScrollOffset );
+    // Existing scroll event logic
+    $(".js_carousel_content").on("scroll", function (event) {
+        hideOrShowCarouselButtons(event.target);
+    });
 
-} );
+    var hideOrShowCarouselButtons = window.__BFS.utils.throttle(function hideOrShowCarouselButtons(domCarouselContent, newScrollOffset) {
+        var $carouselContent = $(domCarouselContent);
+        var $carouselContainer = $carouselContent.closest(".js_carousel_container");
+        $carouselContainer.data("leftPager", $carouselContainer.find(".js_pager[data-dir='left']"));
+        $carouselContainer.data("rightPager", $carouselContainer.find(".js_pager[data-dir='right']"));
 
+        var carouselContentStyles = $carouselContent.data("computedStyles");
+        if (!carouselContentStyles) {
+            carouselContentStyles = getComputedStyle(domCarouselContent);
+            $carouselContent.data("computedStyles", carouselContentStyles);
+        }
+        var carouselContentPaddingLeft = parseInt(carouselContentStyles.paddingLeft);
+        var carouselContentPaddingRight = parseInt(carouselContentStyles.paddingRight);
+        var scrollWidth = domCarouselContent.scrollWidth;
+        var scrollLeft = newScrollOffset || domCarouselContent.scrollLeft;
+        var newCarouselEndOffset = scrollLeft + domCarouselContent.offsetWidth;
 
+        if (inWithin(scrollLeft, 0, carouselContentPaddingLeft + 100)) {
+            $carouselContainer.data("leftPager").addClass("fade-out");
+            $carouselContainer.data("rightPager").removeClass("fade-out");
+        } else if (inWithin(newCarouselEndOffset, scrollWidth - carouselContentPaddingRight - 100, scrollWidth)) {
+            $carouselContainer.data("leftPager").removeClass("fade-out");
+            $carouselContainer.data("rightPager").addClass("fade-out");
+        }
+    }, 0.5);
 
-/*
- *
- * When scrolling through a carousel, determine whether to hide/disable any of the directional buttons
- *
- */
-$( ".js_carousel_content" ).on( "scroll", function ( event ) {
-	hideOrShowCarouselButtons( event.target );
-} );
+    function inWithin(number, startRange, endRange) {
+        if (startRange > endRange) {
+            var tmp = startRange;
+            startRange = endRange;
+            endRange = tmp;
+        }
+        return number >= startRange && number <= endRange;
+    }
 
-
-
-/*
- * ---- Determine whether to show or hide each of the two carousel's buttons
- *
- * 	(depending on the horizontal scroll position)
- *
- */
-var hideOrShowCarouselButtons = window.__BFS.utils.throttle( function hideOrShowCarouselButtons ( domCarouselContent, newScrollOffset ) {
-
-	var $carouselContent = $( domCarouselContent );
-	var $carouselContainer = $carouselContent.closest( ".js_carousel_container" );
-	$carouselContainer.data( "leftPager", $carouselContainer.find( ".js_pager[ data-dir = 'left' ]" ) );
-	$carouselContainer.data( "rightPager", $carouselContainer.find( ".js_pager[ data-dir = 'right' ]" ) );
-
-	// Get the computed styles (from cache, else add it)
-	var carouselContentStyles = $carouselContent.data( "computedStyles" );
-	if ( ! carouselContentStyles ) {
-		carouselContentStyles = getComputedStyle( domCarouselContent );
-		$carouselContent.data( "computedStyles", carouselContentStyles );
-	}
-	var carouselContentPaddingLeft = parseInt( carouselContentStyles.paddingLeft );
-	var carouselContentPaddingRight = parseInt( carouselContentStyles.paddingRight );
-	var scrollWidth = domCarouselContent.scrollWidth;
-	var scrollLeft = newScrollOffset || domCarouselContent.scrollLeft;
-	var newCarouselEndOffset = scrollLeft + domCarouselContent.offsetWidth;
-	if ( inWithin( scrollLeft, 0, carouselContentPaddingLeft + 100 ) ) {
-		$carouselContainer.data( "leftPager" ).addClass( "fade-out" );
-		$carouselContainer.data( "rightPager" ).removeClass( "fade-out" );
-	}
-	else if ( inWithin( newCarouselEndOffset, scrollWidth - carouselContentPaddingRight - 100, scrollWidth ) ) {
-		$carouselContainer.data( "leftPager" ).removeClass( "fade-out" );
-		$carouselContainer.data( "rightPager" ).addClass( "fade-out" );
-	}
-
-}, 0.5 );
-
-function inWithin ( number, startRange, endRange ) {
-	if ( startRange > endRange ) {
-		var tmp = startRange;
-		startRange = endRange;
-		endRange = tmp;
-	}
-	return number >= startRange && number <= endRange;
-}
-
-
-
-
-
-}() );
+})();

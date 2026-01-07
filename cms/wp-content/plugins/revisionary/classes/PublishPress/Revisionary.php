@@ -21,14 +21,14 @@ class Revisions {
 
 	private function load($args = [])
     {
-		if (defined('REVISIONARY_PRO_VERSION')) {
+		if (defined('PUBLISHPRESS_REVISIONS_PRO_VERSION')) {
 			add_action('admin_init', [$this, 'load_updater']);
 		}
 	}
 
 	public function load_updater() {
-        if (defined('REVISIONARY_PRO_VERSION')) {
-		    require_once(RVY_ABSPATH . '/includes-pro/library/Factory.php');
+        if (defined('PUBLISHPRESS_REVISIONS_PRO_VERSION')) {
+		    require_once(REVISIONARY_PRO_ABSPATH . '/includes-pro/library/Factory.php');
             $container = \PublishPress\Revisions\Factory::get_container();
 
             return $container['edd_container']['update_manager'];
@@ -37,8 +37,8 @@ class Revisions {
 
 	public function keyStatus($refresh = false)
     {
-        if (defined('REVISIONARY_PRO_VERSION')) {
-            require_once(RVY_ABSPATH . '/includes-pro/pro-key.php');
+        if (defined('PUBLISHPRESS_REVISIONS_PRO_VERSION')) {
+            require_once(REVISIONARY_PRO_ABSPATH . '/includes-pro/pro-key.php');
             return _revisionary_key_status($refresh);
         }
     }
@@ -71,7 +71,7 @@ class Revisions {
             $sitewide = (isset($args['sitewide'])) ? $args['sitewide'] : -1;
             return rvy_delete_option($option_basename, $sitewide);
         }
-    }
+	}
     
     public function getUserRevision($post_id, $args = []) {
         global $wpdb, $current_user;
@@ -83,8 +83,18 @@ class Revisions {
             return false;
         }
 
+        $revision_status_csv = array_diff(
+            implode("','", array_map('sanitize_key', rvy_revision_statuses())),
+            ['draft-revision']
+        );
+
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $revision_id = $wpdb->get_var(
-            "SELECT ID FROM $wpdb->posts WHERE comment_count = '$post_id' AND post_author = '$user_id' AND post_status IN ('pending-revision', 'future-revision') ORDER BY ID DESC LIMIT 1"
+            $wpdb->prepare(
+                "SELECT ID FROM $wpdb->posts WHERE comment_count = %d AND post_author = %d AND post_status IN ('$revision_status_csv') ORDER BY ID DESC LIMIT 1",  // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+                $post_id,
+                $user_id
+            )
         );
 
         return $revision_id;

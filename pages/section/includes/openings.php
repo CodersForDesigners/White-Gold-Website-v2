@@ -61,3 +61,17 @@
 
 </div></div>
 <?php endif; ?>
+
+<style>
+
+.custom-tab-mobile .accordion-body span{
+font-size: 18px;
+}
+.custom-tab-mobile .accordion-body li b {
+font-size: 18px;
+}
+.custom-tab-mobile .accordion-body ol li::marker {
+    font-size: 1.25em; /* Adjust the size as needed */
+    color: #333; /* Optional: change the color of the number */
+  }
+</style>

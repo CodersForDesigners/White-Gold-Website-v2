@@ -49,7 +49,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <?php require_once __ROOT__ . '/pages/section/includes/benefits.php'; ?>
 <!-- Report Malpractice Section -->
 <!-- start "File Complaint" -->
-<?php require_once __ROOT__ . '/pages/section/report-malpractice.php'; ?>
+<?php require_once __ROOT__ . '/pages/section/includes-lp/report-malpractice.php'; ?>
 <!-- END: Report Malpractice Section -->
 <?php require_once __ROOT__ . '/pages/section/includes-lp/testimonial-lp.php'; ?>
 
@@ -459,6 +459,19 @@ $releaseGoldFAQsSection.on( "change", ".js_faq_toggle", function ( event ) {
 
 </style>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Service",
+  "serviceType": "Gold Buyers in Indiranagar, Sell Gold for Cash in Indiranagar",
+  "provider": {
+    "@type": "Organization",
+    "name": "White Gold"
+  },
+  "areaServed": "Indiranagar",
+  "mainEntityOfPage": "https://whitegold.money/ka/gold-buyers-in-indiranagar"
+}
+</script>
 
 
 

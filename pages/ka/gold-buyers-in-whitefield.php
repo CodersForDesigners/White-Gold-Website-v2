@@ -459,6 +459,19 @@ $releaseGoldFAQsSection.on( "change", ".js_faq_toggle", function ( event ) {
 
 </style>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Service",
+  "serviceType": "Gold Buyers in Whitefield, Sell Gold for Cash in Whitefield",
+  "provider": {
+    "@type": "Organization",
+    "name": "White Gold"
+  },
+  "areaServed": "Whitefield",
+  "mainEntityOfPage": "https://whitegold.money/ka/gold-buyers-in-whitefield"
+}
+</script>
 
 
 

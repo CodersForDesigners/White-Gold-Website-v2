@@ -100,11 +100,11 @@
 							</div>
 						</label>
 						<!-- <div class="card-content" style="--bg-image: url( '/media/background/find-branch.png<?= $ver ?>' )"> -->
-						<div class="card-content px-50">
+						<div class="branches card-content px-50">
 							<div class="row">
 								<div class="columns small-9 small-offset-1 space-50-left-right space-50-bottom">
-									<div class="h4 medium" style="text-shadow: 1px 1px 1px rgba(0,0,0,0.15)">60+ Branches</div>
-									<div class="mt-25 h5 medium" style="text-shadow: 1px 1px 1px rgba(0,0,0,0.15)">Across Karnataka, <br>Tamil Nadu and <br>Kerala</div>
+									<div class="h4 medium" style="text-shadow: 1px 1px 1px rgba(0,0,0,0.15)">100+ Branches</div>
+									<div class="mt-25 h5 medium" style="text-shadow: 1px 1px 1px rgba(0,0,0,0.15)">Across Karnataka, Andhra Pradesh,<br>Kerala & Telangana</div>
 									<a href="/<?= REGION ?>/branches" class="button mt-150 md:mt-50">
 										<span class="button-label">Find Branch&ensp;</span>
 										<img class="button-icon tall" src="/media/icon/location-tall-red.svg<?= $ver ?>" alt="location" title="location">
@@ -193,7 +193,7 @@
 									<?= C\VideoChip( 'Live Gold Rate', '06:50', '2ploMQRLncA', '/media/thumbnails/faq-3.jpg', 'fill-neutral-4', 'rgba( 78, 80, 85, 0.8 )' ) ?>
 								</div>
 							</div>
-							<div class="bg-img"><img class="block" src="/media/cutout/2023/char-check-gold-rate.png<?php echo $ver ?>" alt="cash for gold near me" title="cash for gold near me" ></div>
+							<div class="bg-img"><img class="block" src="https://whitegold.money/cms/../content/cms/check-gold-rate-ka-new.png<?php echo $ver ?>" alt="cash for gold near me" title="cash for gold near me" ></div>
 						</div>
 					</div>
 					<div class="step-break columns small-12">
@@ -347,3 +347,12 @@
 	} );
 
 </script>
+<style>
+@media (max-width:480px)  {
+.branches.card-content .h5{
+font-size:18px;
+}
+}
+
+
+</style>

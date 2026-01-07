@@ -20,33 +20,34 @@ $footerNavigationMenuItems = WordPress::getNavigation( 'Footer' );
 ?>
 
 		<!-- Footer Section -->
+<footer>
 		<section class="footer-section space-200-bottom fill-dark" id="footer-section" data-section-title="Footer Section" data-section-slug="footer-section">
 			<div class="container">
 				<div class="row">
-					<div class="columns small-12 medium-8 space-200-top">
+					<div class="columns small-12 medium-7 space-200-top">
 						<div class="footer-content content-block">
 							<?= $footerPost->get( 'post_content' ) ?>
 						</div>
 					</div>
-					<div class="columns small-12 medium-3 medium-offset-1 space-200-top">
+					<div class="columns small-12 medium-4 medium-offset-1 space-200-top">
 						<div class="footer-menu">
 							<div class="title h4 strong text-neutral-4 space-75-bottom">Quick Links:</div>
 							<?php foreach ( $footerNavigationMenuItems as $item ) : ?>
-								<a href="/<?= $item[ 'url' ] ?>" aria-label="links" class="link h6 strong text-yellow-2"><?= $item[ 'title' ] ?></a><br>
+								<a href="/<?= $item[ 'url' ] ?>" aria-label="<?= $item['title']?>" class="link h6 strong text-yellow-2"><?= $item[ 'title' ] ?></a><br>
 							<?php endforeach; ?>
 <a href="https://whitegold.money/careers/" aria-label="careers" class="link h6 strong text-yellow-2">Careers</a><br>
-	<a href="mailto:wecare@whitegold.money" aria-label="email" ><h5 class="emailfooter">Email us: wecare@whitegold.money</h5></a>
+	<a href="mailto:wecare@whitegold.money" aria-label="Email us: wecare@whitegold.money"><h5 class="emailfooter">Email us: wecare@whitegold.money</h5></a>
 <div class="support">
-<a href="tel://9590704444">
-<h4>Support: +91 9590704444</h4>
+<a href="tel:<?= $contactNumbersForRegions[ REGION ] ?>">
+<h4>Support: <?= $contactNumbersForRegions[ REGION ] ?></h4>
 </a></div>
 		<div class="social-icons">
 <h5>Connect with us: </h5><br>
 <a href="https://www.facebook.com/whitegold.money/" target="_blank" aria-label="facebook" class="fa fa-facebook"></a>
 <a href="https://www.linkedin.com/company/white-gold-india/" target="_blank" aria-label="linked-in"  class="fa fa-linkedin mr-3"></a>
-<a href="https://instagram.com/whitegold.money?igshid=YmMyMTA2M2Y=" target="_blank" aria-label="instagram" class="fa fa-instagram"></a>
-<a href="https://twitter.com/whitegold_money?s=21&t=XjezEzzMapqJvw2naUEyFg" target="_blank" aria-label="Twitter" class="fa fa-twitter"></a>
-<a href="https://youtube.com/channel/UCm2R8_Z8hRuOywELr6CjT7A" target="_blank" aria-label="youtube" class="fa fa-youtube-play"></a>
+<a href="https://www.instagram.com/whitegold.money/" target="_blank" aria-label="instagram" class="fa fa-instagram"></a>
+<a href="https://x.com/whitegold_money" target="_blank" aria-label="Twitter" class="fa fa-twitter"></a>
+<a href="https://www.youtube.com/@whitegoldmoney/videos" target="_blank" aria-label="youtube" class="fa fa-youtube-play"></a>
 </div>
 
 	</div>
@@ -89,7 +90,7 @@ $footerNavigationMenuItems = WordPress::getNavigation( 'Footer' );
 					</li>
 				</ul>
 			</nav>
-		</section>
+		</section></footer>
 		<!-- END: Sitemap Section -->
 
 	</div> <!-- END : Page Content -->
@@ -117,7 +118,7 @@ $footerNavigationMenuItems = WordPress::getNavigation( 'Footer' );
 <script type="text/javascript" src="/js/modules/utils.js<?= $ver ?>"></script>
 <script type="text/javascript" src="/js/modules/forms.js<?= $ver ?>"></script>
 <?php if ( ! BFS_ENV_PRODUCTION ) : ?>
-	<script type="text/javascript" src="/js/modules/disclaimer.js<?= $ver ?>"></script>
+	<script type="text/javascript" src="/js/modules/disclaimer.js<?= $ver ?> defer"></script>
 <?php endif; ?>
 <script type="text/javascript" src="/js/modules/navigation.js<?= $ver ?>"></script>
 <script type="text/javascript" src="/js/modules/cupid.js<?= $ver ?>"></script>
@@ -126,7 +127,7 @@ $footerNavigationMenuItems = WordPress::getNavigation( 'Footer' );
 <script type="text/javascript" src="/js/pages/whatsapp-form.js<?= $ver ?>"></script>
 <script type="text/javascript" src="/js/modules/region-selector.js<?= $ver ?>"></script>
 <!-- <script type="text/javascript" src="/js/modules/device-charge.js<?= $ver ?>"></script> -->
-<script type="text/javascript" src="/js/modules/video_embed.js<?= $ver ?>"></script>
+<script type="text/javascript" src="/js/modules/video_embed.js<?= $ver ?>" defer></script>
 <script type="text/javascript" src="/js/modules/modal_box.js<?= $ver ?>"></script>
 <script type="text/javascript" src="/js/modules/carousel.js<?= $ver ?>"></script>
 <script type="text/javascript" src="/js/modules/phone-country-code.js<?= $ver ?>"></script>
@@ -138,11 +139,24 @@ $footerNavigationMenuItems = WordPress::getNavigation( 'Footer' );
 <script
             src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous" defer></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" type="text/javascript"></script>
  <script>
 
 $('.slider').slick();
+
+// Get the current URL
+var currentUrl = window.location.href;
+
+// Remove all trailing slashes
+var newUrl = currentUrl.replace(/\/+$/, "");
+
+// Check if the URL has changed
+if (newUrl !== currentUrl) {
+    // Change the URL without triggering a full page reload
+    window.history.replaceState({}, document.title, newUrl);
+}
+
             </script>
 
 
@@ -156,6 +170,20 @@ $('.slider').slick();
 
 <?= WordPress::get( 'arbitrary_code_before_body_closing' ) ?>
 <!-- <span aria-hidden="true" style="display: none;" hidden></span> -->
+
+<script id="chat-bot" data-url="https://allegro.concerto.ai/chatbot_v2/?app=6413218922fa14263b8317e9" src="https://allegro-cdn.concerto.ai/resources/index.js" data-env="https://allegro-cdn.concerto.ai" defer></script>
+
+
+<style>
+@media (max-width: 500px){
+.concerto-cb {
+    bottom: 120px;
+    right: 23px;
+    margin: 0;
+}
+}
+
+</style>
 </body>
 
 </html>

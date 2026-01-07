@@ -7,27 +7,26 @@
     </div>
 <div class="row">
 <div class="columns small-12 large-6">
-<img src="/cms/../content/cms/refer-home.png" class="img-fluid" alt="refer-and-earn" title="refer-and-earn">
+<img src="<?php the_field('add_image_r');?>" class="img-fluid" alt="refer-and-earn" title="refer-and-earn">
 <!-- <img src="https://whitegold.money/cms/../content/cms/img-mobile.png" class="img-fluid d-lg-none"> -->
 </div>
 <div class="columns small-12 large-6">
 <div class="cust-box4">
 <div class="mb-5"><h5>Steps To Earn</h5></div>
-<div class="d-flex mt-1">
+<div class="mt-1">
 <img src="/cms/../content/cms/Group-3801.svg" class="img-fluid" alt="icon1" title="icon1">
 <p>Share your Name and Phone Number</p>
 </div>
-<div class="d-flex mt-1">
+<div class="mt-1">
 <img src="/cms/../content/cms/Group-3802.svg" class="img-fluid" alt="icon2" title="icon2">
 <p>Provide Referral Name and Phone Number</p></div>
-<div class="d-flex mt-1">
+<div class="mt-1">
 <img src="/cms/../content/cms/Group-3803.svg" class="img-fluid" alt="icon3" title="icon3">
 <p>Earn up to Rs. 1000 when your Referral makes a transaction with us.</p></div>
 <div class="">
-    <a href="#">
-    <div class="terms" style="margin-left:20px!important;">*Terms and conditions apply</div></a>
+    <div class="terms" style="margin-left:20px!important;">*Terms and conditions apply</div>
 <div class="">
-<a href="https://whitegold.money/refer-and-earn"></a><a class="btn-primary-blue" href="https://whitegold.money/refer-and-earn">Learn More</a></div>
+<a href="https://whitegold.money/refer-and-earn" aria-label="refer-and-earn" title="refer-and-earn"></a><a class="btn-primary-blue" href="https://whitegold.money/refer-and-earn" aria-label="Know More" title="refer-and-earn">Know More</a></div>
     </div>
 </div>
 </div>

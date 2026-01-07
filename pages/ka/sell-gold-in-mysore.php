@@ -39,7 +39,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 </div>
 <div class="row d-flex">
 <div class="columns small-12 large-6 align-self-center">
-    <p class="text-sml-center">Want to sell gold in Mysore? The most effective way to convert your valuable gold jewelry is by identifying dependable gold buyers in Mysore. </p>
+    <p class="text-sml-center">Want to sell gold in Mysore? The most effective way to convert your valuable gold jewelry is by identifying dependable <a href="https://whitegold.money/ka"> gold buyers </a> in Mysore. </p>
     <p class="pt-4">Choose White Gold for:</p>
 <ul class="pt-4">
 <li>Clear transparency in the cash-for-gold process in Mysore.</li>
@@ -68,6 +68,12 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <!-- what we do section -->
 <?php require_once __ROOT__ . '/pages/section/includes-lp/what-we-do-section.php'; ?>
 <!-- END: what we do Section -->
+<!-- Release Gold Section -->
+<?php require_once __ROOT__ . '/pages/section/includes-lp/release-gold-lp.php'; ?>
+<!-- END: Release Gold Section -->
+<!-- START: Price Section -->
+<?php require_once __ROOT__ . '/pages/section/includes-lp/price-section.php'; ?>
+<!-- END: Price Section -->
 
 <?php require_once __ROOT__ . '/pages/section/includes/benefits.php'; ?>
 <!-- Report Malpractice Section -->
@@ -88,7 +94,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <!-- box ends --><div class="columns small-6 large-4 mb-1 mt-1">
 <div class="grey-box bg-grey">
  
-<img src="https://whitegold.money/cms/../content/cms/Group-1.svg" class="img-fluid mb-2" alt="Wide Network Of Branches icon" title="Wide Network Of Branches"><p class="mt-1">Wide Network Of Branches</p>
+<img src="https://whitegold.money/cms/../content/cms/Group-1.svg" class="img-fluid mb-2" alt="Wide Network Of Branches icon" title="Wide Network Of Branches"><p class="mt-1"><a href="https://whitegold.money/ka/branches">Wide Network Of Branches</a></p>
 </div></div>
 <!-- box ends --><div class="columns small-6 large-4 mb-1 mt-1">
 <div class="grey-box bg-grey">
@@ -98,7 +104,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <!-- box ends --><div class="columns small-6 large-4 mb-1 mt-1">
 <div class="grey-box bg-grey">
  
-<img src="https://whitegold.money/cms/../content/cms/Group-3.svg" class="img-fluid mb-2" alt="Complaint Redressal System icon" title="Complaint Redressal System"><p class="mt-1">Complaint Redressal System</p>
+<img src="https://whitegold.money/cms/../content/cms/Group-3.svg" class="img-fluid mb-2" alt="Complaint Redressal System icon" title="Complaint Redressal System"><p class="mt-1"><a href="https://whitegold.money/ka/faqs/file-complaint">Complaint Redressal System</a></p>
 </div></div>
 <!-- box ends --><div class="columns small-6 large-4 mb-1 mt-1">
 <div class="grey-box bg-grey">
@@ -108,7 +114,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <!-- box ends --><div class="columns small-6 large-4 mb-1 mt-1">
 <div class="grey-box bg-grey">
  
-<img src="https://whitegold.money/cms/../content/cms/Group-5.svg" class="img-fluid mb-2" alt="Live Gold Rate - White Gold" title="Live Gold Rate"><p class="mt-1">Live Gold Rate</p>
+<img src="https://whitegold.money/cms/../content/cms/Group-5.svg" class="img-fluid mb-2" alt="Live Gold Rate - White Gold" title="Live Gold Rate"><p class="mt-1">Live <a href="https://whitegold.money/ka/live-gold"> Gold Rate</a></p>
 </div></div>
 <!-- box ends --></div>
 </div>
@@ -121,26 +127,47 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 
 
 </section>
-
+<!-- start "File Complaint" -->
+<?php require_once __ROOT__ . '/pages/section/includes-lp/report-malpractice.php'; ?>
 <!-- END: Report Malpractice Section -->
 <?php require_once __ROOT__ . '/pages/section/includes-lp/testimonial-lp.php'; ?>
 
 <?php if( get_field('add_image') ): ?>
 <!-- START: location Section -->
+<div class="space-200-top">
 <?php require_once __ROOT__ . '/pages/section/includes-lp/reach-us.php'; ?>
-<!-- END: location Section -->
+<!-- END: location Section --></div>
 <?php endif; ?>
 <!-- START: faq Section -->
 <?php require_once __ROOT__ . '/pages/section/includes/faq-section.php'; ?>
 <!-- END: faq Section -->
 
 <?php require_once __ROOT__ . '/pages/section/includes/store-locator.php'; ?>
+<!-- START blog AND media -->
+<?php require_once __ROOT__ . '/pages/section/includes/home-blog-and-media.php'; ?>
+<!-- END: blog AND media -->
+
 <!-- <script type="text/javascript" src="/js/pages/custom.js"></script> -->
 <?php
 require_once __ROOT__ . '/pages/partials/footer.php'; ?>
 
 <script type="text/javascript" src="/js/modules/lp.js<?= $ver ?>"></script>
 <style>
+
+.lp-mysore .tab{
+float: none;
+width: auto;
+height:auto;
+}
+.lp-mysore .tabcontent{
+height:auto;
+}
+.lp-mysore .tab button{
+margin: 0;width:auto;border-radius:6px;padding: 9px 26px!important;
+}
+.lp-mysore .tabcontent{
+width:100%;overflow-y: hidden;
+}
 
 @media only screen and (min-width: 600px) and (max-width: 1000px)  {
 .d-tab-none{display: none!important;}
@@ -212,4 +239,53 @@ require_once __ROOT__ . '/pages/partials/footer.php'; ?>
 </style>
 
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Service",
+  "serviceType": "Gold Buyers in Mysore, Sell Gold for Cash in Mysore",
+  "provider": {
+    "@type": "Organization",
+    "name": "White Gold"
+  },
+  "areaServed": "Mysore",
+  "mainEntityOfPage": "https://whitegold.money/ka/sell-gold-in-mysore"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "white Gold",
+  "image": "https://whitegold.money/content/cms/whitegold-logo-light.svg",
+  "@id": "https://whitegold.money/ka/sell-gold-in-mysore",
+  "url": "https://whitegold.money/ka/sell-gold-in-mysore",
+  "telephone": "+91 95907 04444",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No. 2767/B, new No.83/B, Kantharaj Urs Road, 1st Main Rd, Saraswathipuram",
+    "addressLocality": "Mysore",
+    "postalCode": "570009",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 12.299657574391029,
+    "longitude": 76.63502293668456
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
 
+    ],
+    "opens": "10:00",
+    "closes": "19:00"
+  }
+}
+</script>

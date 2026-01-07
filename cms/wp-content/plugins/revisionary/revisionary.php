@@ -5,13 +5,13 @@
  * Description: Maintain published content with teamwork and precision using the Revisions model to submit, approve and schedule changes.
  * Author: PublishPress
  * Author URI: https://publishpress.com
- * Version: 2.5.5
+ * Version: 3.7.4
  * Text Domain: revisionary
  * Domain Path: /languages/
- * Min WP Version: 4.9.7
- * Requires PHP: 5.6.20
+ * Min WP Version: 5.5
+ * Requires PHP: 7.2.5
  * 
- * Copyright (c) 2020 PublishPress
+ * Copyright (c) 2025 PublishPress
  *
  * GNU General Public License, Free Software Foundation <https://www.gnu.org/licenses/gpl-3.0.html>
  *
@@ -30,152 +30,199 @@
  *
  * @package     PublishPress\Revisions
  * @author      PublishPress
- * @copyright   Copyright (C) 2020 PublishPress. All rights reserved.
+ * @copyright   Copyright (C) 2025 PublishPress. All rights reserved.
  *
  **/
 
-if( basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME']) )
-	die( 'This page cannot be called directly.' );
+ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-if ( strpos( $_SERVER['SCRIPT_NAME'], 'p-admin/index-extra.php' ) || strpos( $_SERVER['SCRIPT_NAME'], 'p-admin/update.php' ) )
-	return;
+// Temporary usage within this module only; avoids multiple instances of version string
+global $pp_revisions_version;
 
-$pro_active = false;
+$pp_revisions_version = '3.7.4';
 
-foreach ((array)get_option('active_plugins') as $plugin_file) {
-	if (false !== strpos($plugin_file, 'revisionary-pro.php')) {
-		$pro_active = true;
-		break;
-	}
-}
+global $wp_version;
 
-if (!$pro_active && is_multisite()) {
-	foreach (array_keys((array)get_site_option('active_sitewide_plugins')) as $plugin_file) {
-		if (false !== strpos($plugin_file, 'revisionary-pro.php')) {
-			$pro_active = true;
-			break;
-		}
-	}
-}
+$min_php_version = '7.2.5';
+$min_wp_version  = '5.5';
 
-if ($pro_active) {
-	add_filter(
-        'plugin_row_meta', 
-        function($links, $file)
-        {
-            if ($file == plugin_basename(__FILE__)) {
-                $links[]= __('<strong>This plugin can be deleted.</strong>', 'revisionary');
+$invalid_php_version = version_compare(phpversion(), $min_php_version, '<');
+$invalid_wp_version = version_compare($wp_version, $min_wp_version, '<');
+
+// If the PHP version is not compatible, terminate the plugin execution and show an admin notice.
+if (is_admin() && $invalid_php_version) {
+    add_action(
+        'admin_notices',
+        function () use ($min_php_version) {
+            if (current_user_can('activate_plugins')) {
+                echo '<div class="notice notice-error"><p>';
+                printf(
+                    'PublishPress Revisions requires PHP version %s or higher.',
+                    esc_html($min_php_version)
+                );
+                echo '</p></div>';
             }
-
-            return $links;
-        },
-        10, 2
+        }
     );
+}
+
+// If the WP version is not compatible, terminate the plugin execution and show an admin notice.
+if (is_admin() && $invalid_wp_version) {
+    add_action(
+        'admin_notices',
+        function () use ($min_wp_version) {
+            if (current_user_can('activate_plugins')) {
+                echo '<div class="notice notice-error"><p>';
+                printf(
+                    'PublishPress Revisions requires WordPress version %s or higher.',
+                    esc_html($min_wp_version)
+                );
+                echo '</p></div>';
+            }
+        }
+    );
+}
+
+if ($invalid_php_version || $invalid_wp_version) {
+    return;
+}
+
+$revisionary_pro_active = false;
+
+global $revisionary_loaded_by_pro;
+
+$revisionary_loaded_by_pro = strpos(str_replace('\\', '/', __FILE__), 'vendor/publishpress/');
+
+// Detect separate Pro plugin activation, but not self-activation (this file loaded in vendor library by Pro)
+if (false === $revisionary_loaded_by_pro) {
+    foreach ((array)get_option('active_plugins') as $plugin_file) {
+        if (false !== strpos($plugin_file, 'revisionary-pro.php')) {
+            $revisionary_pro_active = true;
+            break;
+        }
+    }
+
+    if (!$revisionary_pro_active && is_multisite()) {
+        foreach (array_keys((array)get_site_option('active_sitewide_plugins')) as $plugin_file) {
+            if (false !== strpos($plugin_file, 'revisionary-pro.php')) {
+                $revisionary_pro_active = true;
+                break;
+            }
+        }
+    }
+
+    if ($revisionary_pro_active) {
+        add_filter(
+            'plugin_row_meta',
+            function($links, $file)
+            {
+                if ($file == plugin_basename(__FILE__)) {
+                    $links[]= __('<strong>This plugin can be deleted.</strong>', 'revisionary');
+                }
+
+                return $links;
+            },
+            10, 2
+        );
+
+		add_action(
+			'admin_notices',
+			function () {
+				if (current_user_can('activate_plugins')) {
+					echo '<div class="notice notice-error"><p>'
+					. 'Revisions Pro requires the free plugin (PublishPress Revisions) to be deactivated.'
+					. '</p></div>';
+				}
+			}
+		);
+
+        return;
+    }
+}
+
+if ( isset($_SERVER['SCRIPT_NAME']) && strpos( esc_url_raw($_SERVER['SCRIPT_NAME']), 'p-admin/index-extra.php' ) || strpos( esc_url_raw($_SERVER['SCRIPT_NAME']), 'p-admin/update.php' ) ) {
 	return;
 }
 
-if ( defined('RVY_VERSION') || defined('REVISIONARY_FILE') ) {  // Revisionary 1.x defines RVY_VERSION on load, but does not define REVISIONARY_FILE
-	// don't allow two copies to run simultaneously
-	if ( is_admin() && strpos( $_SERVER['SCRIPT_NAME'], 'p-admin/plugins.php' ) && ! strpos( urldecode($_SERVER['REQUEST_URI']), 'deactivate' ) ) {
-		add_action('all_admin_notices', function()
+if (! defined('REVISIONS_INTERNAL_VENDORPATH')) {
+	define('REVISIONS_INTERNAL_VENDORPATH', __DIR__ . '/lib/vendor');
+}
+
+if (!defined('REVISIONARY_FILE') && !$revisionary_loaded_by_pro) {
+	$includeFileRelativePath = REVISIONS_INTERNAL_VENDORPATH . '/publishpress/publishpress-instance-protection/include.php';
+	if (file_exists($includeFileRelativePath)) {
+		require_once $includeFileRelativePath;
+	}
+
+	if (class_exists('PublishPressInstanceProtection\\Config')) {
+		$pluginCheckerConfig = new PublishPressInstanceProtection\Config();
+		$pluginCheckerConfig->pluginSlug    = 'revisionary';
+		$pluginCheckerConfig->pluginFolder  = 'revisionary';
+		$pluginCheckerConfig->pluginName    = 'PublishPress Revisions';
+
+		$pluginChecker = new PublishPressInstanceProtection\InstanceChecker($pluginCheckerConfig);
+	}
+
+	if (! class_exists('ComposerAutoloaderInitRevisionary')
+        && file_exists(REVISIONS_INTERNAL_VENDORPATH . '/autoload.php')
+    ) {
+        require_once REVISIONS_INTERNAL_VENDORPATH . '/autoload.php';
+    }
+
+	include_once REVISIONS_INTERNAL_VENDORPATH . '/publishpress/wordpress-version-notices/src/include.php';
+}
+
+if (!defined('REVISIONARY_FILE') && (!$revisionary_pro_active || $revisionary_loaded_by_pro)) {
+	define('REVISIONARY_FILE', __FILE__);
+
+	add_action(
+		'init', 
+		function() {
+			global $pp_revisions_version;
+
+			if (!function_exists('revisionary')) {
+				require_once(dirname(__FILE__).'/functions.php');
+			}
+
+			pp_revisions_plugin_updated($pp_revisions_version);
+		},
+		2
+	);
+
+	// register these functions before any early exits so normal activation/deactivation can still run with RS_DEBUG
+	register_activation_hook(__FILE__, function() 
 		{
-			if (defined('REVISIONARY_FILE')) {
-				$message = sprintf( __( 'Another copy of PublishPress Revisions (or Revisionary) is already activated (version %1$s: "%2$s")', 'revisionary' ), RVY_VERSION, dirname(plugin_basename(REVISIONARY_FILE)) );
-			} else {
-				$message = sprintf( __( 'Another copy of PublishPress Revisions (or Revisionary) is already activated (version %1$s)', 'revisionary' ), RVY_VERSION );
+			global $pp_revisions_version;
+
+			if (!function_exists('revisionary')) {
+				require_once(dirname(__FILE__).'/functions.php');
 			}
-			
-			echo "<div id='message' class='notice error' style='color:black'>" . $message . '</div>';
-		}, 5);
-	}
-	return;
-}
 
-define('REVISIONARY_FILE', __FILE__);
-
-// register these functions before any early exits so normal activation/deactivation can still run with RS_DEBUG
-register_activation_hook(__FILE__, function() 
-	{
-		$current_version = '2.5.5';
-
-		$last_ver = get_option('revisionary_last_version');
-
-		if ($current_version != $last_ver) {
-			require_once( dirname(__FILE__).'/lib/agapetry_wp_core_lib.php');
-			require_once(dirname(__FILE__).'/rvy_init.php');
-			revisionary_refresh_revision_flags();
-
-			// mirror to REVISIONARY_VERSION
-			update_option('revisionary_last_version', $current_version);
+			pp_revisions_plugin_updated($pp_revisions_version);
+			pp_revisions_plugin_activation();
 		}
+	);
 
-		// force this timestamp to be regenerated, in case something went wrong before
-		delete_option( 'rvy_next_rev_publish_gmt' );
-
-		if (!class_exists('RevisionaryActivation')) {
-			require_once(dirname(__FILE__).'/activation_rvy.php');
-		}
-
-		new RevisionaryActivation(['import_legacy' => true]);
-	}
-);
-
-register_deactivation_hook(__FILE__, function()
-	{
-		if ($timestamp = wp_next_scheduled('rvy_mail_buffer_hook')) {
-		   wp_unschedule_event( $timestamp,'rvy_mail_buffer_hook');
-		}
-	}
-);
-
-// negative priority to precede any default WP action handlers
-add_action(
-	'plugins_loaded', 
-	function()
-	{
-		if ( defined('RVY_VERSION') ) {  // Revisionary 1.x defines RVY_VERSION on load, but does not define REVISIONARY_FILE
-			// don't allow two copies to run simultaneously
-			if ( is_admin() && strpos( $_SERVER['SCRIPT_NAME'], 'p-admin/plugins.php' ) && ! strpos( urldecode($_SERVER['REQUEST_URI']), 'deactivate' ) ) {
-				add_action('all_admin_notices', function()
-				{
-					if (defined('REVISIONARY_FILE')) {
-						$message = sprintf( __( 'Another copy of PublishPress Revisions (or Revisionary) is already activated (version %1$s: "%2$s")', 'revisionary' ), RVY_VERSION, dirname(plugin_basename(REVISIONARY_FILE)) );
-					} else {
-						$message = sprintf( __( 'Another copy of PublishPress Revisions (or Revisionary) is already activated (version %1$s)', 'revisionary' ), RVY_VERSION );
-					}
-
-					echo "<div id='message' class='notice error' style='color:black'>" . $message . '</div>';
-				}, 5);
+	register_deactivation_hook(__FILE__, function()
+		{
+			if (!function_exists('rvy_init')) {
+				require_once( dirname(__FILE__).'/rvy_init.php');
 			}
-			return;
-		}
 
-		global $wp_version;
-
-		$min_wp_version = '4.9.7';
-		$min_php_version = '5.6.20';
-
-		$php_version = phpversion();
-
-		// Critical errors that prevent initialization
-		if (version_compare($min_php_version, $php_version, '>')) {
-			if (is_admin() && current_user_can('activate_plugins')) {
-				add_action('all_admin_notices', function(){echo "<div id='message' class='notice error'>" . sprintf(__('PublishPress Revisions requires PHP version %s or higher.', 'revisionary'), '5.6.20') . "</div>"; });
+			if (!rvy_is_plugin_active('revisionary-pro/revisionary-pro.php')) {
+				pp_revisions_plugin_deactivation();
 			}
-			return;
 		}
+	);
 
-		if (version_compare($wp_version, $min_wp_version, '<')) {
-			if (is_admin() && current_user_can('activate_plugins')) {
-				add_action('all_admin_notices', function(){echo "<div id='message' class='notice error'>" . sprintf(__('PublishPress Revisions requires WordPress version %s or higher.', 'revisionary'), '4.9.7') . "</div>"; });
-			}
-			return;
-		}
-
-		define('REVISIONARY_VERSION', '2.5.5');
+	// negative priority to precede any default WP action handlers
+	function revisionary_load() {
+		global $pp_revisions_version;
+		
+		define('PUBLISHPRESS_REVISIONS_VERSION', $pp_revisions_version);
 
 		if ( ! defined( 'RVY_VERSION' ) ) {
-			define( 'RVY_VERSION', REVISIONARY_VERSION );  // back compat
+			define( 'RVY_VERSION', PUBLISHPRESS_REVISIONS_VERSION );  // back compat
 		}
 
 		define ('COLS_ALL_RVY', 0);
@@ -200,7 +247,7 @@ add_action(
 			require_once( dirname(__FILE__).'/lib/agapetry_wp_admin_lib.php');
 				
 			// skip WP version check and init operations when a WP plugin auto-update is in progress
-			if ( false !== strpos($_SERVER['SCRIPT_NAME'], 'update.php') )
+			if (isset($_SERVER['SCRIPT_NAME']) && false !== strpos(esc_url_raw($_SERVER['SCRIPT_NAME']), 'update.php') )
 				return;
 		}
 
@@ -209,12 +256,12 @@ add_action(
 		require_once( dirname(__FILE__).'/functions.php');
 
 		// avoid lockout in case of editing plugin via wp-admin
-		if ( defined('RS_DEBUG') && is_admin() && ( strpos( urldecode($_SERVER['REQUEST_URI']), 'p-admin/plugin-editor.php' ) || strpos( urldecode($_SERVER['REQUEST_URI']), 'p-admin/plugins.php' ) ) && false === strpos( $_SERVER['REQUEST_URI'], 'activate' ) )
+		if ( defined('RS_DEBUG') && is_admin() && isset($_SERVER['REQUEST_URI']) && ( strpos( urldecode(esc_url_raw($_SERVER['REQUEST_URI'])), 'p-admin/plugin-editor.php' ) || strpos( urldecode(esc_url_raw($_SERVER['REQUEST_URI'])), 'p-admin/plugins.php' ) ) && false === strpos( esc_url_raw($_SERVER['REQUEST_URI']), 'activate' ) )
 			return;
 
 		define('RVY_ABSPATH', __DIR__);
 
-		if (is_admin() && !defined('REVISIONARY_PRO_VERSION')) {
+		if (is_admin() && !defined('PUBLISHPRESS_REVISIONS_PRO_VERSION')) {
 			require_once(__DIR__ . '/includes/CoreAdmin.php');
 			new \PublishPress\Revisions\CoreAdmin();
 		}
@@ -223,10 +270,21 @@ add_action(
 
 		// since sequence of set_current_user and init actions seems unreliable, make sure our current_user is loaded first
 		add_action('init', 'rvy_init', 1);
-		add_action('init', 'rvy_add_revisor_custom_caps', 99);
+		
+		if (!defined('IFRAME_REQUEST')) {
+			add_action('init', 'rvy_add_revisor_custom_caps', 99);
+			add_action('wp_loaded', 'rvy_add_revisor_custom_caps', 99);
+		}
+
 		add_action('init', 'rvy_configuration_late_init', PHP_INT_MAX - 1);
 
 		revisionary();
 	}
-	, -10
-);
+
+	// negative priority to precede any default WP action handlers
+    if ($revisionary_loaded_by_pro) {
+        revisionary_load();	// Pro support
+    } else {
+        add_action('plugins_loaded', 'revisionary_load', -10);
+    }
+}

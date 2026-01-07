@@ -27,10 +27,6 @@ require_once __ROOT__ . '/pages/partials/header.php';
 
 ?>
 
-
-
-
-
 <!-- ## General Page -->
 <script>
 	console.log( "here." )
@@ -56,13 +52,46 @@ require_once __ROOT__ . '/pages/partials/header.php';
 
 
 <!-- Sell Gold Form Section -->
-<?php require_once __ROOT__ . '/pages/section/sell-gold-form.php'; ?>
+<?php require_once __ROOT__ . '/pages/section/w-sell-gold-form.php'; ?>
 <!-- END: Sell Gold Form Section -->
 
 
+
+
 <!-- Sell Gold Section -->
-<?php require_once __ROOT__ . '/pages/section/sell-gold.php'; ?>
+
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if (
+    $current_url_path == '/ka'
+) {
+    require_once __ROOT__ . '/pages/section/sell-gold.php';
+}
+?>
+
 <!-- END: Sell Gold Section -->
+
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if (
+	$current_url_path == '/ap' ||
+	$current_url_path == '/ts'
+) {
+    require_once __ROOT__ . '/pages/section/sell-gold-ap.php';
+}
+?>
+
+
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if ($current_url_path == '/kl') {
+    require_once __ROOT__ . '/pages/section/sell-gold-kl.php';
+}
+?>
+
 
 
 <!-- Sell Gold Home Visit Form Section -->
@@ -76,14 +105,71 @@ require_once __ROOT__ . '/pages/partials/header.php';
 
 
 <!-- Report Malpractice Section -->
-<!-- aka "Don't Get Cheated", "File Complaint" -->
-<?php require_once __ROOT__ . '/pages/section/report-malpractice.php'; ?>
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if (
+    $current_url_path == '/ka' 
+) {
+    require_once __ROOT__ . '/pages/section/report-malpractice.php';
+}
+?>
+
+
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if (
+        $current_url_path == '/ts' ||
+        $current_url_path == '/ap'
+) {
+    require_once __ROOT__ . '/pages/section/report-malpractice-ap.php';
+}
+?>
+
+
+
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if ($current_url_path == '/kl') {
+    require_once __ROOT__ . '/pages/section/report-malpractice-kl.php';
+}
+?>
 <!-- END: Report Malpractice Section -->
 
 
-<!-- Release Gold Section -->
-<?php require_once __ROOT__ . '/pages/section/release-gold.php'; ?>
-<!-- END: Release Gold Section -->
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if (
+    $current_url_path == '/ka'
+) {
+    require_once __ROOT__ . '/pages/section/release-gold.php';
+}
+?>
+
+
+
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if (
+        $current_url_path == '/ts' ||
+        $current_url_path == '/ap' 
+) {
+    require_once __ROOT__ . '/pages/section/release-gold-ap.php';
+}
+?>
+
+
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if ($current_url_path == '/kl') {
+    require_once __ROOT__ . '/pages/section/release-gold-kl.php';
+}
+?>
 
 
 <!-- Release Gold FAQs Section -->
@@ -110,6 +196,10 @@ require_once __ROOT__ . '/pages/partials/header.php';
 <!-- START blog AND media -->
 <?php require_once __ROOT__ . '/pages/section/includes/home-blog-and-media.php'; ?>
 <!-- END: blog AND media -->
+<!-- START: location Section -->
+<?php require_once __ROOT__ . '/pages/section/home-reach-us.php'; ?>
+
+<!-- END: location Section -->
 
 <?php require_once __ROOT__ . '/pages/partials/footer.php'; ?>
 

@@ -3,8 +3,8 @@
     <div class="text-center mt-5 mb-5"><h2>Want to know more?</h2></div>
     <div class="text-center">
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'media')" id="defaultOpen">Media</button>
-  <button class="tablinks" onclick="openCity(event, 'blogs')">Blogs</button>
+  <button class="tablinks" onclick="openCity(event, 'blogs')" id="defaultOpen">Blogs</button>
+ <button class="tablinks" onclick="openCity(event, 'media')">Media</button>
 </div></div>
 
 <div id="media" class="tabcontent mt-5">
@@ -25,7 +25,7 @@ if ($repeater_field) {
        ?>
 
 
-<div class="columns small-12 large-4 pd-10 mb-4">
+<div class="columns small-12 medium-6 large-4 pd-10 mb-4">
   
   <a rel="nofollow" href="<?php echo $sub_field_value_5;?>">
        <img src="<?php echo $sub_field_value_1;?>" class="img-fluid" alt="<?php echo $sub_field_value_2;?>" title="<?php echo $sub_field_value_2;?>"></a>
@@ -68,7 +68,7 @@ $wpb_all_query = new WP_Query(array(
         <div class="row">
         <div class="blog-grid-inner">
         <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-<div class="columns small-12 large-4 pd-10 mb-4">
+<div class="columns small-12 medium-6 large-4 pd-10 mb-4">
 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
 <div class="d-flex mb-4 justify-content-between align-items-center mt-4">
 <h6><?php the_category(); ?></h6>
@@ -99,8 +99,9 @@ $wpb_all_query = new WP_Query(array(
     <div class="text-center mt-5 mb-5"><h2>Want to know more?</h2></div>
     <div class="text-center">
 <div class="tab">
-  <button class="tablinksm" onclick="openCitym(event, 'mediam')" id="defaultOpen1">Media</button>
-  <button class="tablinksm" onclick="openCitym(event, 'blogsm')">Blogs</button>
+  <button class="tablinksm" onclick="openCitym(event, 'blogsm')" id="defaultOpen1">Blogs</button>
+<button class="tablinksm" onclick="openCitym(event, 'mediam')">Media</button>
+
 </div></div>
 
 <div id="mediam" class="tabcontentm mt-5">
@@ -155,7 +156,7 @@ if ($repeater_field) {
 
 </div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
 <div id="blogsm" class="tabcontentm mt-3">
  
 <?php 
@@ -210,7 +211,37 @@ $wpb_all_query = new WP_Query(array(
 
 </div>
 </section>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var swiper = new Swiper('.sample-slider', {
+       loop: true,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        480: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }
+    });
+  });
+</script>
+<!--
 <script>
     var swiper = new Swiper('.sample-slider', {
       loop: true,
@@ -239,7 +270,7 @@ $wpb_all_query = new WP_Query(array(
         }
       
     });
-</script>
+</script>-->
 
 <style>
     /* home blog and media css STARTS */

@@ -70,7 +70,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <div class="icon">
 <div class="d-lg-flex mt-5">
 <img src="/cms/../content/cms/Group-4034.svg" class="img-fluid">
-<p>Benefits from 50 branches across South India</p>
+<p>Benefits from 100+ branches across South India</p>
 </div>
 
 <div class="d-lg-flex mt-5 pt-sm-6c">

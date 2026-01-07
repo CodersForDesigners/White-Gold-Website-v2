@@ -12,7 +12,7 @@
 <?php if( get_sub_field('upload_profile_image') ): ?>
 <img src="<?php the_sub_field('upload_profile_image'); ?>" class="img-fluid profile-img" alt="<?php the_sub_field('alt_tag');?>"><?php endif; ?>
 <div class="img-fluid" style="background-size:contain;background-repeat:no-repeat;background-image:url(<?php the_field('testimonial_icon');?>)"></div>
-<img src="<?php the_field('testimonial_icon');?>" class="icon" style="width:32px;height:auto;">
+<img src="<?php the_field('testimonial_icon');?>" class="icon" style="width:32px;height:auto;" alt="testimonial-icon">
 <p class=""><?php the_sub_field('description'); ?></p></div>
 <div class="testimonial-heading pb-3">
 <h5 class="mb-3"><?php the_sub_field('name'); ?></h5>
@@ -40,7 +40,7 @@
 <?php if( get_sub_field('upload_profile_image') ): ?>
 <img src="<?php the_sub_field('upload_profile_image'); ?>" class="img-fluid profile-img" alt="<?php the_sub_field('alt_tag');?>"><?php endif; ?>
 <div class="img-fluid" style="background-size:contain;background-repeat:no-repeat;background-image:url(<?php the_field('testimonial_icon');?>)" alt="<?php the_sub_field('alt_tag');?>"></div>
-<img src="<?php the_field('testimonial_icon');?>" class="icon" style="width:32px;height:auto;">
+<img src="<?php the_field('testimonial_icon');?>" class="icon" style="width:32px;height:auto;" alt="testimonial-icon">
 <p class=""><?php the_sub_field('description'); ?></p></div>
 <div class="testimonial-heading">
 <h5 class="mb-3"><?php the_sub_field('name'); ?></h5>

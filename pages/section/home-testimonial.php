@@ -8,10 +8,10 @@
 <?php while( have_rows('add_testimonials') ): the_row(); ?>
 <div class="">
 <div class="box-testimonials">
-<div class="d-lg-flex">
+<div class="d-lg-flex d-tab-block">
 <img src="<?php the_sub_field('upload_profile_image'); ?>" class="img-fluid profile-img" alt="<?php the_sub_field('alt_tag');?>" title="<?php the_sub_field('alt_tag');?>">
 <div class="img-fluid" style="background-size:contain;background-repeat:no-repeat;background-image:url(<?php the_field('testimonial_icon');?>)"></div>
-<img src="<?php the_field('testimonial_icon');?>" class="icon" alt="testimonial-icon" style="width:32px;height:auto;">
+<img src="<?php the_field('testimonial_icon');?>" class="icon" alt="testimonial-icon" title="testimonial-icons" style="width:32px;height:auto;">
 <p class=""><?php the_sub_field('description'); ?></p></div>
 <div class="testimonial-heading">
 <h5 class="mb-3"><?php the_sub_field('name'); ?></h5>
@@ -38,7 +38,7 @@
 <div class="d-lg-flex">
 <img src="<?php the_sub_field('upload_profile_image'); ?>" class="img-fluid profile-img" alt="<?php the_sub_field('alt_tag');?>" title="<?php the_sub_field('alt_tag');?>">
 <div class="img-fluid" style="background-size:contain;background-repeat:no-repeat;background-image:url(<?php the_field('testimonial_icon');?>)" alt="<?php the_sub_field('alt_tag');?>"></div>
-<img src="<?php the_field('testimonial_icon');?>" class="icon" alt="testimonial-icon" style="width:32px;height:auto;">
+<img src="<?php the_field('testimonial_icon');?>" class="icon" title="testimonial-icons" alt="testimonial-icon" style="width:32px;height:auto;">
 <p class=""><?php the_sub_field('description'); ?></p></div>
 <div class="testimonial-heading">
 <h5 class="mb-3"><?php the_sub_field('name'); ?></h5>
@@ -56,7 +56,7 @@
 }
 .box-testimonials p {
     display: inline-block;
-    font-size: 18px;
+    font-size: 16px;
     color: #212322;
 }
 
@@ -139,12 +139,13 @@ top: 51%!important;
 
 
 }
-
-
-@media screen and (min-width: 700px){
-    .d-lg-flex{
+@media screen and (min-width: 1100px){
+.d-lg-flex{
         display:flex!important;
     }
+}
+@media screen and (min-width: 700px){
+    
     .d-md-block {
     display: block!important;
 }
@@ -168,9 +169,7 @@ top: 51%!important;
     padding-right: 36px;
     border-right: 4px solid #FFC980;
 }
-.d-lg-flex {
-    display: flex!important;
-}
+
 .box-testimonials .icon {
     left: 34px;
     top: 20px;
@@ -202,7 +201,7 @@ top: 51%!important;
 
 .box-testimonials p {
     display: inline-block;
-    font-size: 18px;
+    font-size: 16px;
     color: #212322;
 }
 
@@ -214,6 +213,7 @@ top: 51%!important;
 
 /* start mobile version portrait android */
 @media screen and (max-width: 600px){
+    
     .slick-next {
     width: 35px!important;
     height: 40px;
@@ -280,7 +280,12 @@ top: 51%!important;
     margin-bottom: 1rem!important;
 }
 
+
 @media screen and (min-device-width: 767px) and (max-device-width: 1056px) {
+
+.d-tab-block{
+    display:block!important;
+}
 
     .box-testimonials .icon {
     left: 0px;

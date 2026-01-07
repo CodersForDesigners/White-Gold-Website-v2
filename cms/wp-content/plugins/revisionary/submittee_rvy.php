@@ -1,5 +1,5 @@
 <?php
-if( basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME']) )
+if (!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename(esc_url_raw($_SERVER['SCRIPT_FILENAME'])) )
 	die();
 	
 
@@ -8,21 +8,22 @@ class Revisionary_Submittee {
 	function handle_submission($action, $sitewide = false, $customize_defaults = false) {
 		if ( ( $sitewide || $customize_defaults ) ) {
 			if ( ! is_super_admin() )
-				wp_die(__awp('Cheatin&#8217; uh?'));
+				wp_die('');
 		
 		} elseif ( ! current_user_can( 'manage_options' ) )
-			 wp_die(__awp('Cheatin&#8217; uh?'));
+			 wp_die('');
 
 		if ( $customize_defaults )
 			$sitewide = true;		// default customization is only for per-site options, but is network-wide in terms of DB storage in sitemeta table
 		
-		if ( false === strpos( $_GET["page"], 'revisionary-' ) && false === strpos( $_GET["page"], 'rvy-' ) )
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.NonceVerification.Missing
+		if (isset($_GET["page"]) && false === strpos( sanitize_key($_GET["page"]), 'revisionary-' ) && false === strpos( sanitize_key($_GET["page"]), 'rvy-' ) )
 			return;
 		
-		if ( empty($_POST['rvy_submission_topic']) )
+		if ( empty($_POST['rvy_submission_topic']) )			// phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.NonceVerification.Missing
 			return;
 		
-		if ( 'options' == $_POST['rvy_submission_topic'] ) {
+		if ( 'options' == $_POST['rvy_submission_topic'] ) {	// phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.NonceVerification.Missing
 			rvy_refresh_default_options();
 
 			$method = "{$action}_options";
@@ -40,12 +41,76 @@ class Revisionary_Submittee {
 	}
 	
 	function update_options( $sitewide = false, $customize_defaults = false ) {
-		check_admin_referer( 'rvy-update-options' );
-	
-		$this->update_page_options( $sitewide, $customize_defaults );
-		
 		global $wpdb;
-		$wpdb->query( "UPDATE $wpdb->options SET autoload = 'no' WHERE (option_name LIKE 'rvy_%' OR option_name LIKE 'revisionary_%') AND option_name != 'rvy_next_rev_publish_gmt'" );
+		
+		check_admin_referer( 'rvy-update-options' );
+
+		$default_prefix = ( $customize_defaults ) ? 'default_' : '';
+		
+		if (!empty($_POST['all_options'])) {
+			$reviewed_options = array_map('sanitize_key', explode(',', sanitize_text_field($_POST['all_options'])));
+
+			foreach ( $reviewed_options as $option_basename ) {
+				if (isset($_POST[$option_basename])) {
+					if (is_array($_POST[$option_basename])) {
+						$value = array_map('sanitize_key', $_POST[$option_basename]);
+					} else {
+						if (is_numeric($_POST[$option_basename])) {
+							$value = intval($_POST[$option_basename]);
+						} else {
+							$value = sanitize_key($_POST[$option_basename]);
+						}
+					}
+				} else {
+					$value = '';
+				}
+
+				if ('permissions_compat_mode' == $option_basename) {
+					$current_val = get_option('rvy_permissions_compat_mode');
+
+					if ($current_val != $value) {
+						add_action(
+							'init',
+							function() use ($value) {
+								global $wpdb;
+
+								$revision_statuses = rvy_revision_statuses();
+								
+								foreach ($revision_statuses as $revision_status) {
+									$base_status = ('draft-revision' == $revision_status) ? 'draft' : 'pending';
+
+									if ($value) {
+										// switching to Enhanced Revision access control (store revision status to post_status column)
+										$wpdb->query(	// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+											$wpdb->prepare(
+												"UPDATE $wpdb->posts SET post_status = %s WHERE (comment_count != 0 AND post_mime_type = %s)",
+												$revision_status,
+												$revision_status
+											)
+										);
+									} else {
+										// switching to Broadest Compat mode (store base status to post_status column)
+										$wpdb->query(	// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+											$wpdb->prepare(
+												"UPDATE $wpdb->posts SET post_status = %s WHERE (comment_count != 0 AND post_mime_type = %s)",
+												$base_status,
+												$revision_status
+											)
+										);
+									}
+								}
+							}
+						, 9999);
+					}
+				}
+
+				rvy_update_option( $default_prefix . $option_basename, $value, $sitewide );
+			}
+		}
+
+		$wpdb->query( 											// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			"UPDATE $wpdb->options SET autoload = 'no' WHERE (option_name LIKE 'rvy_%' OR option_name LIKE 'revisionary_%') AND option_name != 'rvy_next_rev_publish_gmt'" 
+		);
 	}
 	
 	function default_options( $sitewide = false, $customize_defaults = false ) {
@@ -53,17 +118,22 @@ class Revisionary_Submittee {
 	
 		$default_prefix = ( $customize_defaults ) ? 'default_' : '';
 
-		$reviewed_options = array_map('sanitize_key', explode(',', $_POST['all_options']));
-		foreach ( $reviewed_options as $option_name )
-			rvy_delete_option($default_prefix . $option_name, $sitewide );
+		if (!empty($_POST['all_options'])) {
+			$reviewed_options = array_map('sanitize_key', explode(',', sanitize_text_field($_POST['all_options'])));
+			foreach ( $reviewed_options as $option_name ) {
+				rvy_delete_option($default_prefix . $option_name, $sitewide );
+			}
+		}
 	}
 	
 	function update_sitewide() {
 		check_admin_referer( 'rvy-update-options' );
 		
-		$reviewed_options = isset($_POST['rvy_all_movable_options']) ? explode(',', $_POST['rvy_all_movable_options']) : array();
+		//phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$reviewed_options = isset($_POST['rvy_all_movable_options']) ? array_map('sanitize_key', explode(',', $_POST['rvy_all_movable_options'])) : array();
 		
-		$options_sitewide = isset($_POST['rvy_options_sitewide']) ? (array) $_POST['rvy_options_sitewide'] : array();
+
+		$options_sitewide = isset($_POST['rvy_options_sitewide']) ? array_map('sanitize_key', (array) $_POST['rvy_options_sitewide']) : array();
 
 		update_site_option( "rvy_options_sitewide_reviewed", $reviewed_options );
 		update_site_option( "rvy_options_sitewide", $options_sitewide );
@@ -77,18 +147,6 @@ class Revisionary_Submittee {
 	}
 	
 	function update_page_options( $sitewide = false, $customize_defaults = false ) {
-		$default_prefix = ( $customize_defaults ) ? 'default_' : '';
-		
-		$reviewed_options = array_map('sanitize_key', explode(',', $_POST['all_options']));
-
-		foreach ( $reviewed_options as $option_basename ) {
-			$value = isset($_POST[$option_basename]) ? $_POST[$option_basename] : '';
-
-			if ( ! is_array($value) )
-				$value = trim($value);
-			$value = stripslashes_deep($value);
-
-			rvy_update_option( $default_prefix . $option_basename, $value, $sitewide );
-		}
+		// deprecated (moved into calling function)
 	}
 }

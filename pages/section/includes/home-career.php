@@ -34,21 +34,21 @@
 
 <div class="columns small-12 large-6 custom-career-row text-center mt-sm-40 mt-ls-40 mt--5">
 <div class="row mb-1">
-    <div class="columns small-4 large-3"><img src="/cms/../content/cms/Img19.png" class="img-fluid img-gap" alt="careerimg1" title="careerimg1"></div>
-    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/Img2.png" class="img-fluid img-gap" alt="careerimg2" title="careerimg2"></div>
-    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/Img3.png" class="img-fluid img-gap" alt="careerimg3" title="careerimg3"></div>
+    <div class="columns small-4 large-3"><img src="/cms/../content/cms/careers-img1.png" class="img-fluid img-gap" alt="careerimg1" title="careerimg1"></div>
+    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/careers-img2.png" class="img-fluid img-gap" alt="careerimg2" title="careerimg2"></div>
+    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/careers-img3.png" class="img-fluid img-gap" alt="careerimg3" title="careerimg3"></div>
 </div>
 
 <div class="row mb-1">
-    <div class="columns small-4 large-3"> <img src="https://whitegold.money/cms/../content/cms/Img4.png" class="img-fluid img-gap" alt="careerimg4" title="careerimg4"></div>
-    <div class="columns small-4 large-3"> <img src="https://whitegold.money/cms/../content/cms/Img5.png" class="img-fluid img-gap" alt="careerimg5" title="careerimg5"></div>
-    <div class="columns small-4 large-3"> <img src="https://whitegold.money/cms/../content/cms/Img6.png" class="img-fluid img-gap" alt="careerimg6" title="careerimg6"></div>
+    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/careers-img4.png" class="img-fluid img-gap" alt="careerimg4" title="careerimg4"></div>
+    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/careers-img5.png" class="img-fluid img-gap" alt="careerimg5" title="careerimg5"></div>
+    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/careers-img6.png" class="img-fluid img-gap" alt="careerimg6" title="careerimg6"></div>
 </div>
 
 <div class="row mb-1">
-    <div class="columns small-4 large-3"> <img src="https://whitegold.money/cms/../content/cms/Img7.png" class="img-fluid img-gap" alt="careerimg7" title="careerimg7"></div>
-    <div class="columns small-4 large-3"> <img src="https://whitegold.money/cms/../content/cms/Img8.png" class="img-fluid img-gap" alt="careerimg8" title="careerimg8"></div>
-    <div class="columns small-4 large-3"> <img src="https://whitegold.money/cms/../content/cms/Img1.png" class="img-fluid img-gap" alt="careerimg9" title="careerimg9"></div>
+    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/careers-img7.png" class="img-fluid img-gap" alt="careerimg7" title="careerimg7"></div>
+    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/careers-img8.png" class="img-fluid img-gap" alt="careerimg8" title="careerimg8"></div>
+    <div class="columns small-4 large-3"> <img src="/cms/../content/cms/careers-img9.png" class="img-fluid img-gap" alt="careerimg9" title="careerimg9"></div>
 </div>
 
 

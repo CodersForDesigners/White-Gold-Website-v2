@@ -1,0 +1,34 @@
+{
+    "config_path": "f5e04b1fef0107f0c13e947db71f585a",
+    "whitegold.money": {
+        "siteId": "NPwAuuUIbpuhjOOxnGUgPIdcwxmlIVJH",
+        "siteSecret": "7yNcfChB67Pmt8pm0lUx4uTA7jVlFBEuC0FKsbjbOeyktwjS42uVPhW14s66LiHO",
+        "blogId": 1,
+        "compression": false,
+        "webhookToken": "7f7315a0594c6830f6cb255870bc0eda",
+        "home_url": "https:\/\/whitegold.money",
+        "admin_url": "https:\/\/whitegold.money\/cms\/wp-admin\/",
+        "hosting": "unknown",
+        "alwaysBuffer": true,
+        "isEzoicActive": false,
+        "isApoActive": false,
+        "isNginxHelperActive": false,
+        "isLateIntegrationInitRequired": false,
+        "isDlmActive": false,
+        "isWoocommerceCacheHandlerActive": false,
+        "isWoocommerceActive": false,
+        "isAeliaCurrencySwitcherActive": false,
+        "isGeoTargetingWPActive": false,
+        "dlm_downloading_url": null,
+        "dlm_download_endpoint": null,
+        "pluginVersion": "1.10.4",
+        "options_cache": {
+            "cache_handler_cache_handler": false,
+            "woocommerce_default_customer_address": false,
+            "wc_aelia_currency_switcher": {
+                "ipgeolocation_enabled": null
+            }
+        },
+        "additional_domains": []
+    }
+}

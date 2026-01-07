@@ -46,13 +46,34 @@ $contactNumbersForRegions = PHONE_NUMBERS;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
 	<?php require_once __ROOT__ . '/pages/partials/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="/css/careers.css">
+    <link rel="stylesheet" type="text/css" href="/css/careers.css<?= $ver ?>">
 
 <script type="text/javascript" src="/plugins/geolib/geolib-v3.3.1.min.js"></script>
 <script type="text/javascript" src="/js/pages/branch-finder.js<?= $ver ?>"></script>
+<style>
+.location-lp th:last-child, td:last-child {
+    background-color: var(--blue-5)!important;
+}
+@media (max-width: 760px){
+.price-section table tr td:nth-child(2) ul li:before, .price-section table tr td:nth-child(3) ul li:before {
+    top: -21px!important;
+    left: 6px!important;
+}
+.location-lp .price-section table ul li {
+    font-size: 1.2rem!important;
+}
+.location-lp .price-section table tr td:nth-child(2) ul li:before, .price-section table tr td:nth-child(3) ul li:before {
+    top: -21px!important;
+    left: 6px!important;
+}
+.location-lp .price-section table tr td:nth-child(3), .price-section table th:nth-child(3){
+vertical-align: middle!important;
+}
+}
+</style>
 </head>
 
-<body class="<?= ( WordPress::$isEnabled and ! WordPress::$onlySetupContext ) ? implode( ' ', get_body_class() ) : 'body' ?>" id="body">
+<body class="<?= ( WordPress::$isEnabled and ! WordPress::$onlySetupContext ) ? implode( ' ', get_body_class() ) : 'body' ?> <?php the_field('page_class'); ?> location-lp" id="body">
 <?php if ( WordPress::$isEnabled and ! WordPress::$onlySetupContext ) wp_body_open(); ?>
 
 <?= WordPress::get( 'arbitrary_code_after_body_opening' ) ?? <<<ARB

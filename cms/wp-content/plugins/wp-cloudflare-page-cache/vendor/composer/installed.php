@@ -1,33 +1,50 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'v4.5.3',
-    'version' => '4.5.3.0',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'codeinwp/wp-cloudflare-super-page-cache',
+        'pretty_version' => 'v5.1.0',
+        'version' => '5.1.0.0',
+        'reference' => '80f53c970596df196ae682116c0b0ac760d43ff4',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => false,
     ),
-    'reference' => '8ee213a306b0d8a0b5ab326ae583abb03ede6e8f',
-    'name' => 'codeinwp/wp-cloudflare-super-page-cache',
-  ),
-  'versions' => 
-  array (
-    'codeinwp/wp-cloudflare-super-page-cache' => 
-    array (
-      'pretty_version' => 'v4.5.3',
-      'version' => '4.5.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '8ee213a306b0d8a0b5ab326ae583abb03ede6e8f',
+    'versions' => array(
+        'codeinwp/themeisle-sdk' => array(
+            'pretty_version' => '3.3.46',
+            'version' => '3.3.46.0',
+            'reference' => 'af2e7360bbe3af6a1bd2c3779fc33b7765104461',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../codeinwp/themeisle-sdk',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'codeinwp/wp-cloudflare-super-page-cache' => array(
+            'pretty_version' => 'v5.1.0',
+            'version' => '5.1.0.0',
+            'reference' => '80f53c970596df196ae682116c0b0ac760d43ff4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'woocommerce/action-scheduler' => array(
+            'pretty_version' => '3.9.2',
+            'version' => '3.9.2.0',
+            'reference' => 'efbb7953f72a433086335b249292f280dd43ddfe',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../woocommerce/action-scheduler',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wptt/webfont-loader' => array(
+            'pretty_version' => 'v1.1.4',
+            'version' => '1.1.4.0',
+            'reference' => 'd5a7150f4e1a90c566e2e64aeae0876743be48b9',
+            'type' => 'package',
+            'install_path' => __DIR__ . '/../wptt/webfont-loader',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-    'deliciousbrains/wp-background-processing' => 
-    array (
-      'pretty_version' => '1.0.2',
-      'version' => '1.0.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2cbee1abd1b49e1133cd8f611df4d4fc5a8b9800',
-    ),
-  ),
 );

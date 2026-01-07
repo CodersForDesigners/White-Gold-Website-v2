@@ -42,7 +42,8 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
     <tr>
       <th scope="col" class="item"><h6 class="mt-3">Factors</h6></th>
       <th scope="col" class="item2"> <h6 class="mt-3">Other Gold Buyers</h6></th>
-      <th scope="col" class="item3 fill-blue-5"> <h6 class="mt-3">White Gold - Gold Buyers</h6></th>
+      <th scope="col" class="item3"> <h6 class="mt-3"> White Gold - Gold Buyers</h6></th>
+    
     </tr>
   </thead>
    <!-- end table heading -->
@@ -51,72 +52,73 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
     <tr>
       <td>
       <div class="d-lg-flex mt-4 mb-2">
-    <img src="/cms/../content/cms/Group-4167.svg" class="img-fluid" alt="">
+    <img src="/cms/../content/cms/Group-4167.svg" class="img-fluid" alt="Best Gold Buyers in Bangalore" title="Leading Gold Buyers in Bangalore">
     <h6 class="title1">Technology-Driven Expertise</h6>
 </div>
       </td>
       <td>
-    <ul>
-<li>Use of unreliable scales, improper testing methods to determine the weight and purity of gold will give inconclusive results.</li>
+      <ul>
+<li>Possess specialized knowledge and expertise in gold purity checks with advanced technology German machines.</li>
 </ul>
 </td>
 <td>
-    <ul>
-<li>Possess specialized knowledge and expertise in gold purity checks with advanced technology German machines.</li>
+<ul>
+<li>Use of unreliable scales, improper testing methods to determine the weight and purity of gold will give inconclusive results.</li>
 </ul>
+   
 </td>
 </tr>
 <!-- end table row -->
 <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="/cms/../content/cms/Group-4167.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-4167.svg" class="img-fluid" alt="Best Gold Buyers in Bangalore" title="Cash for gold near me">
     <h6 class="title1">Wide network of branches</h6>
 </div></td>
       <td> <ul>
-<li>Do not have multiple branches, and sellers must stick to one shop.</li>
+<li>We are spread across South India with over 60+ branches. </li>
 </ul></td>
       <td><ul>
-<li>We are spread across South India with over 50 branches. </li>
+<li>Do not have multiple branches, and sellers must stick to one shop.</li>
 </ul></td>
     </tr>
     <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="/cms/../content/cms/Group-4169.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-4169.svg" class="img-fluid" alt="Gold Sell" title="Release pledge gold">
     <h6 class="title1">Security and transparency</h6>
 </div></td>
-<td> <ul>
-<li>Do not possess the same level of security in terms of transaction and billing.</li>
-</ul></td>
-<td> <ul>
+<td><ul>
 <li>We follow a secure & transparent transaction process with thorough KYC and zero hidden charges.</li>
-</ul></td>
+</ul> </td>
+<td><ul>
+<li>Do not possess the same level of security in terms of transaction and billing.</li>
+</ul> </td>
     </tr>
     <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="/cms/../content/cms/Group-4170.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-4170.svg" class="img-fluid" alt="Gold Sell" title="Gold Buyers in Bangalore">
     <h6 class="title1">Payouts</h6>
 </div></td>
       <td><ul>
-<li>Can provide a low price with fewer benefits when compared to White Gold.</li>
+<li>We provide the right payouts and other benefits like a bonus.</li>
 </ul></td>
 <td><ul>
-<li>We provide the right payouts and other benefits like a bonus.</li>
+<li>Can provide a low price with fewer benefits when compared to White Gold.</li>
 </ul></td>
     </tr>
     <tr>
       
-      <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="/cms/../content/cms/Group-4171.svg" class="img-fluid">
+      <td class="border-bottom-left"><div class="d-lg-flex mt-4 mb-2">
+    <img src="/cms/../content/cms/Group-4171.svg" class="img-fluid" alt="Cash for gold near me" title="White Gold">
     <h6 class="title1">Easy Steps</h6>
 </div></td>
 <td><ul>
-<li>Often take a long-time to process the gold and still may not provide the full payout.</li>
-</ul></td>
-<td><ul>
 <li>We offer convenient and easy 7 steps with an authentic process for selling your gold objects.</li>
+</ul></td>
+<td class="border-bottom-right"><ul>
+<li>Often take a long-time to process the gold and still may not provide the full payout.</li>
 </ul></td>
     </tr>
    
@@ -138,7 +140,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <div class="row">
 	<!-- col start -->
 <div class="small-12 large-4">
-<img src="/cms/../content/cms/Rectangle-826-1.png" class="img-fluid d-none d-md-block d-med-none">
+<img src="/cms/../content/cms/Rectangle-826-1.png" class="img-fluid d-none d-md-block d-med-none" alt="Release pledge gold" title="Gold Sales">
 <div class="inner-box4 fill-blue-4 mt-4">
 <h5>Cutting-edge tech</h5>
 <p>White Gold uses the latest gold testing machines to ensure accuracy and reliability.</p>
@@ -147,7 +149,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <h5>Expert staff</h5>
 <p>White Gold's well-educated and highly professional team is ready to assist with all your gold needs.</p>
 </div>
-<img src="/cms/../content/cms/Rectangle-829.png" class="img-fluid d-none d-md-block d-med-none mt-4">
+<img src="/cms/../content/cms/Rectangle-829.png" class="img-fluid d-none d-md-block d-med-none mt-4" alt="Cash for gold near me" title="Gold Buyers near me">
 </div>
 <div class="small-12 large-4 mb-2">
 <div class="inner-box4 fill-blue-4">
@@ -156,23 +158,23 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 </div>
 <div class="inner-box4 bg-white mt-4">
 <h6 class="text-black fw-500 mb-3">Choose White Gold to exchange your gold today!</h6>
-<p class="text-black mt-3">Write to us at</p>
-<a class="btn-primary-blue mt-3"  href="tel://9590704444"><img src="/cms/../content/cms/telephone-svg.svg" class="img-fluid mt--2"> +91 9590704444</a>
+<p class="text-black mt-3">Call us</p>
+<a class="btn-primary-blue mt-3"  href="tel://9590704444"><img src="/cms/../content/cms/telephone-svg.svg" class="img-fluid mt--2" alt="Call Icon"> +91 9590704444</a>
 </div>
-<img src="/cms/../content/cms/Rectangle-823.png" class="img-fluid d-none d-md-block d-med-none mt-4">
+<img src="/cms/../content/cms/Rectangle-823.png" class="img-fluid d-none d-md-block d-med-none mt-4" alt="Gold Buyers" title="Gold Buyers in Bangalore">
 
 </div>
 <div class="small-12 large-4">
-<img src="/cms/../content/cms/Rectangle-827-2.png" class="img-fluid d-none d-md-block d-med-none mt-4">
+<img src="/cms/../content/cms/Rectangle-827-2.png" class="img-fluid d-none d-md-block d-med-none mt-4" alt="Gold Buyers" title="Gold Buyers near me">
 <div class="inner-box4 fill-blue-4 mt-4">
 <h5>Wide reach</h5>
-<p>With 50 branches across South India, White Gold is accessible to customers across the region.</p>
+<p>With 60 branches across South India, White Gold is accessible to customers across the region.</p>
 </div>
 <div class="inner-box4 fill-blue-4 mt-4">
 <h5>Happy customers</h5>
-<p>Join over 500,000 satisfied customers who trust White Gold for their gold transactions.</p>
+<p>Join over 600,000 satisfied customers who trust White Gold for their gold transactions.</p>
 </div>
-<img src="/cms/../content/cms/Rectangle-828.png" class="img-fluid d-none d-md-block d-med-none mt-4">
+<img src="/cms/../content/cms/Rectangle-828.png" class="img-fluid d-none d-md-block d-med-none mt-4" alt="White Gold" title="Gold Sales in Bangalore">
 </div>
 
 </div>
@@ -186,11 +188,11 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <section class="sell-gold-section fill-neutral-1 space-200-top space-80-bottom js_section_sell_gold" id="sell-gold-section" data-section-title="Sell Gold Section" data-section-slug="sell-gold-section">
 	<div class="container">
 		<div class="row">
-			<div class="intro columns small-12 large-4">
-				<div class="h2 strong text-white-2">Our Gold Selling Process</div>
-				<img src="<?php the_field('add_left_sec_img');?>" alt="Growth Ladder At White Gold" class="img-fluid d-none d-md-block mt-50">		
+			<div class="intro columns small-12 large-5">
+				<div class="h2 strong text-white-2 text-center">Gold Selling Process</div>
+				<img src="<?php the_field('add_left_sec_img');?>" alt="Growth Ladder At White Gold" title="Pledged gold" class="img-fluid d-none d-md-block mt-50">		
 	</div>
-			<div class="step-cards columns small-12 large-8 pl-15 pr-15">
+			<div class="step-cards columns small-12 large-7 pl-15 pr-15">
 				<div class="step-card-grid row">
 					<div class="step-break columns small-12 space-75-left-right">
 						<div class="row text-blue-3 space-75-top">
@@ -234,28 +236,71 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 </section>
 <?php endif; ?>
 
+
+<section class="space-200-top fill-blue-5 company">
+<div class="container">
+
+<div class="row flex-column-reverse flex-lg-row">
+<div class="col-lg-4 mb-5 pb-5 pb-md-0">
+<img src="https://whitegold.money/cms/../content/cms/whitegold-white-logo.svg" class="img-fluid mb-5 pb-5 d-none d-md-block" alt="Selling Gold" title="Selling Gold">
+
+<div class="d-flex mb-4 inner-box">
+<img src="https://whitegold.money/cms/../content/cms/Founded-In-2018.svg" class="img-fluid" alt="Release pledge gold" title="Gold Buyers">
+<p class="text-white"> Founded In <span class="text-yellow-2">2017</span></p> 
+</div>
+<div class="d-flex mb-4 inner-box">
+<img src="https://whitegold.money/cms/../content/cms/5-Years-In-The-Industry-1.svg" class="img-fluid" alt="Gold Sales" title="Gold Buyers">
+<p class="text-white"> <span class="text-yellow-2">7</span> Years In The Industry </p> 
+</div>
+<div class="d-flex mb-4 inner-box">
+<img src="https://whitegold.money/cms/../content/cms/50-Branches-1.svg" class="img-fluid" alt="Gold Sales" title="Gold Buyers">
+<p class="text-white"> <span class="text-yellow-2"> 60+ </span> Branches</p>
+</div>
+
+</div>
+<div class="col-lg-4 mb-4 mb-md-0">
+<img src="https://whitegold.money/cms/../content/cms/whitegold-white-logo.svg" class="img-fluid pb-5 d-lg-none d-md-none" alt="Gold Sell" title="Gold Buying Services in Bangalore">
+<p class="text-white mb-5 pb-5">White Gold is a tech driven company. Consistently innovating with the latest and advanced technology to best serve our customers.</p>
+
+
+<div class="d-flex mb-4 inner-box">
+<img src="https://whitegold.money/cms/../content/cms/Over-500000-Satisfied-Customers-2.svg" class="img-fluid" alt="Best Gold Buyers in Bangalore" title="Best Gold Buyers in Bangalore">
+<p class="text-white">  Over <span class="text-yellow-2"> 6,00,000 </span> Satisfied Customers  Branches</p>
+</div>
+<div class="d-flex mb-4 mb-sm-0 inner-box ">
+<img src="https://whitegold.money/cms/../content/cms/200-Employees-1.svg" class="img-fluid" alt="Gold Sales in Bangalore" title="Sell Gold">
+<p class="text-white"> <span class="text-yellow-2"> 250+ </span> Employees</p>
+</div>
+
+</div>
+<div class="col-lg-4 align-self-end">
+ <img src="https://whitegold.money/cms/../content/cms/5K8A6751-1.png" class="img-fluid d-none d-tab-none d-mdl-block" alt="Release pledge gold" title="Best Gold Buyers in Bangalore">
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+
 <section class="what-we-buy space-200-top space-200-bottom bg-white">
 <div class="container">
   <div class="text-center mb-5 mt-3">
   <h2>What We Buy?</h2>
   </div>
 
-<div class="row"> <!-- row start -->
+<div class="row flex-column-reverse flex-lg-row"> <!-- row start -->
 <div class="col-lg-7"><!-- col start -->
 <table class="table">
   <thead>
     <tr>
       <th scope="col" style="border-top-left-radius: 10px;">Gold jewellery</th>
       <th scope="col">Gold coins</th>
-      <th scope="col" style="border-top-right-radius: 10px;">Gold bullions</th>
+      <th scope="col fill-blue-5" style="border-top-right-radius: 10px;">Gold bullions</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>10K</td>
-      <td>Krugerrand gold coin</td>
-      <td>BRPL Gold bars</td>
-    </tr>
     <tr>
       <td>14K</td>
       <td>Canadian maple leaf gold coin</td>
@@ -279,8 +324,8 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
   </tbody>
 </table>
 </div> <!-- col end -->
-<div class="col-lg-5"> <!-- col start -->
-<img src="/cms/../content/cms/6c074d4ec2-1-1.jpg" class="img-fluid pt-4">
+<div class="col-lg-5 text-md-center"> <!-- col start -->
+<img src="/cms/../content/cms/gold-buyers-bnglr.png" class="img-fluid pt-4 pb-4" alt="Release pledge gold" title="Gold Buyers in Bangalore">
 
 </div> <!-- col end -->
 </div><!-- row end -->
@@ -289,7 +334,9 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 </section>
 
 
-
+<!-- START testimonials -->
+<?php require_once __ROOT__ . '/pages/section/home-testimonial.php'; ?>
+<!-- END: Testimonial Section -->
 
 
 <?php if( have_rows('faq_careers') ): ?>
@@ -346,7 +393,34 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <?php
 require_once __ROOT__ . '/pages/partials/footer.php'; ?>
 
+<script type="text/javascript">
 
+	$( function () {
+
+		/*
+		 *
+		 * ----- Allow the user to collapse an open procedure step (card) in the Release Gold section
+		 *
+		 */
+		var $releaseGoldSection = $( ".js_section_release_gold" );
+		var currentlyToggledCardId = $releaseGoldSection.find( ".js_card_toggle:checked" ).attr( "id" );
+		$releaseGoldSection.on( "click", ".js_card_toggle", function ( event ) {
+			var domCardToggle = event.target;
+			var newlyToggledCardId = domCardToggle.id;
+
+			if ( currentlyToggledCardId !== newlyToggledCardId )
+				return;
+
+			domCardToggle.checked = false;
+			currentlyToggledCardId = null;
+		} );
+		$releaseGoldSection.on( "change", ".js_card_toggle", function ( event ) {
+			currentlyToggledCardId = event.target.id;
+		} );
+
+	} );
+
+</script>
 <script>
     /**
  |
@@ -638,6 +712,9 @@ arrows: true,
 
 
 <style>
+.what-we-buy th:last-child, td:last-child{background-color: var(--blue-5)!important;}
+.location-lp .price-section th:last-child, td:last-child{background-color: #ffffff!important;}
+
   .what-we-buy th:first-child, td:first-child {padding: 15px;width: 30%;background-color: #b3d4fc00;
 }
   .sell-gold-section .step-cards .card > input:checked ~ .card-head .index{color: #1e50cc;}
@@ -648,7 +725,7 @@ arrows: true,
     .what-we-buy table tr td:nth-child(2) {width: 35%;padding: 15px;background-color: #b3d4fc1a!important;box-shadow: none;font-weight: 500;font-size: 16px;color: black;}
 .price-section th:first-child, td:first-child {font-size: 16px;padding: 12px;width: 30%;background-color: #b3d4fc1a;font-weight: 600;
 }
-.what-we-buy table tr td:nth-child(2), table th:nth-child(2) {width: 35%;padding: 15px;background-color: #ffffff00;box-shadow:none;}
+.what-we-buy table tr td:nth-child(2), table th:nth-child(2) {width: 35%;padding: 15px;background-color: #ffffff;box-shadow:none;}
 .what-we-buy thead{ background-color: var(--blue-5);font-size: 16px;color: white;}
 .what-we-buy thead tr th{padding:15px;}
     .sell-gold-section p{color:black;}
@@ -668,5 +745,86 @@ arrows: true,
 
 .sell-gold-section .step-cards .card .toggle .arrow .a1, .step-cards .card .toggle .arrow .a2{background-color: #1e50cc;
     box-shadow: 0 0 0 1px #1e50cc;}
+@media screen and (min-width: 700px){
+.box-testimonials .testimonial-heading{
+left: 250px!important;top: 0px!important;
+}
+}
+ @media only screen and (min-width: 700px) and (max-width: 1330px)  {
+.box-testimonials {top: 0px!important;}
+}
+@media (max-width: 600px){
+  table ul li{font-size: 1.3rem;}
+
+}
+@media (min-width: 1480px){
+.box-testimonials{
+top: 0px!important;
+}}
+
+
+table tr td:nth-child(3), table th:nth-child(3){
+  background: #FFFFFF;
+}
+table tr td:nth-child(3) ul li {
+    color: #000;
+}
+table ul li{ color: #ffffff;}
+table .item3{border-top-right-radius: 0px;}
+table .item2{border-top-right-radius: 16px;}
+
+@media (min-width: 1000px){
+  table tr td:nth-child(2) ul li:before{
+    color: #FFFFFF;
+    font-family: 'FontAwesome';
+    content: "\f00c";
+    background-color: #4BAE4F;
+    border-radius: 46px;
+    font-weight: 300;
+    padding: 4px 0px 0px 3px;
+    font-size: 7px;
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    line-height: 7px;
+    border: 1px solid #4bae4f;
+  }
+  /* table tr td:nth-child(3) ul li:before{
+    color: #FFC980;
+    font-family: 'FontAwesome';
+    content: "\2716";
+    background-color: #DB5846;
+    border-radius: 46px;
+    font-weight: 300;
+    padding: 4px 0px 0px 3.7px;
+    font-size: 7px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    line-height: 7px;
+    border: 1px solid #DB5846;
+  } */
+}
+
+.what-we-buy thead tr th{background: #0032A0;color:#ffffff;}
+.company .inner-box p{margin-left: 12px;margin-top: 9px;}
+.price-section table .item2 {
+    border-top-left-radius: 0px!important;
+}
+.price-section table .item3{border-top-right-radius: 16px!important; }
+.location-lp .price-section th:last-child, td:last-child {
+    background-color: var(--blue-5)!important;
+}
+
+.price-section table .item2 h6{color: #212529;}
+@media (min-width:1200px)  {
+.d-mdl-block{
+  display:block!important;
+}
+}
 </style>
 

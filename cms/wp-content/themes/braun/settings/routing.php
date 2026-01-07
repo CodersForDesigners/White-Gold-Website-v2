@@ -80,3 +80,4 @@ add_filter( 'send_headers', function () {
 
 	header( 'Cache-Control: s-maxage=60', true );
 }, PHP_INT_MAX );
+

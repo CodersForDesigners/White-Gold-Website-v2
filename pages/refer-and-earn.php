@@ -30,19 +30,19 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <div class="row"><!-- row start -->
 <div class="col-lg-4 mt-3 mb-2"><!-- col start -->
 <div class="cust-box-6">
-<img src="https://staging.whitegold.money/cms/../content/cms/login.svg" class="img-fluid mb-3">
+<img src="/cms/../content/cms/login.svg" class="img-fluid mb-3">
 <h3 class="mb-2">Login with your details</h3>
 <p>Share your Name and Phone Number</p></div>
 </div><!-- col end -->
 <div class="col-lg-4 mt-3 mb-2"><!-- col start -->
 <div class="cust-box-6">
-<img src="https://staging.whitegold.money/cms/../content/cms/referral-details.svg" class="img-fluid mb-3">
+<img src="/cms/../content/cms/referral-details.svg" class="img-fluid mb-3">
 <h3 class="mb-2">Referral details</h3>
 <p>Provide Referral Name and Phone Number</p></div>
 </div><!-- col end -->
 <div class="col-lg-4 mt-3 mb-2"><!-- col start -->
 <div class="cust-box-6">
-<img src="https://staging.whitegold.money/cms/../content/cms/rewarded.svg" class="img-fluid mb-3">
+<img src="/cms/../content/cms/rewarded.svg" class="img-fluid mb-3">
 <h3 class="mb-2">Get Rewarded</h3>
 <p>Earn up to Rs. 1000 when your Referral makes a transaction with us.</p></div>
 </div><!-- col end -->
@@ -63,7 +63,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 </div>
 <div class="col-lg-6">
 	<div class="text-center">
-<img src="https://staging.whitegold.money/cms/../content/cms/program.png" class="img-fluid"></div>
+<img src="/cms/../content/cms/program.png" class="img-fluid"></div>
 </div>
 
 </div>
@@ -96,28 +96,28 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <div class="fill-blue-4 inner2 br16">
 <div class="inner-3 inner-3-arrow fill-blue-5 mt-2 mb-6 br16">
 	<div class="d-flex">
-		<img src="https://whitegold.money/cms/../content/cms/inner3-icon1.svg" class="img-fluid">
+		<img src="/cms/../content/cms/inner3-icon1.svg" class="img-fluid">
 		<p>Fill in the White Gold Agent application form</p>
 	</div>
 </div>
 
 <div class="inner-3 inner-3-arrow fill-blue-5 mt-6 mb-6 br16">
 	<div class="d-flex">
-		<img src="https://whitegold.money/cms/../content/cms/ID-proof.svg" class="img-fluid">
+		<img src="/cms/../content/cms/ID-proof.svg" class="img-fluid">
 		<p>Submit your ID proof and address proof</p>
 	</div>
 </div>
 
 <div class="inner-3 inner-3-arrow fill-blue-5 mt-6 mb-6 br16">
 	<div class="d-flex">
-		<img src="https://whitegold.money/cms/../content/cms/Get-Verified-by-us.svg" class="img-fluid">
+		<img src="/cms/../content/cms/Get-Verified-by-us.svg" class="img-fluid">
 		<p>Get Verified by us</p>
 	</div>
 </div>
 
 <div class="inner-3 fill-blue-5 mt-6 mb-6 br16">
 	<div class="d-flex">
-		<img src="https://whitegold.money/cms/../content/cms/referring-and-earning.svg" class="img-fluid">
+		<img src="/cms/../content/cms/referring-and-earning.svg" class="img-fluid">
 		<p>Start referring and earning</p>
 	</div>
 </div>
@@ -228,7 +228,7 @@ datatype: "json",
 
 success: function(response) { 
 console.log("cus response: "+response);  
-window.location.href = "https://whitegold.money/thank-you";
+//window.location.href = "https://whitegold.money/thank-you";
 //console.log("cus status: "+response.status);  
 //console.log("cus message: "+response.message);  
 

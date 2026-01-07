@@ -6,7 +6,7 @@
  *
  *
  */
-
+const REGION = 'kl';
 \BFS\CMS\WordPress::setupContext();
 
 // If a post revision or preview is being viewed, and the user is not authorized to view it, simply return to the home page
@@ -49,7 +49,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <?php require_once __ROOT__ . '/pages/section/includes/benefits.php'; ?>
 <!-- Report Malpractice Section -->
 <!-- start "File Complaint" -->
-<?php require_once __ROOT__ . '/pages/section/report-malpractice.php'; ?>
+<?php require_once __ROOT__ . '/pages/section/includes-lp/report-malpractice.php'; ?>
 <!-- END: Report Malpractice Section -->
 <?php require_once __ROOT__ . '/pages/section/includes-lp/testimonial-lp.php'; ?>
 
@@ -65,6 +65,7 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 <!-- <script type="text/javascript" src="/js/pages/custom.js"></script> -->
 <?php
 require_once __ROOT__ . '/pages/partials/footer.php'; ?>
+<script type="text/javascript" src="/js/pages/custom.js"></script>
 <script type="text/javascript" src="/js/modules/lp.js<?= $ver ?>"></script>
 <style>
 @media screen and (max-width: 980px){

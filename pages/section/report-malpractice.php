@@ -23,7 +23,8 @@
 				</div>
 				<!-- <div class="fg-img-container columns small-12"> -->
 				<div class="fg-img-container row">
-					<div class="fg-img absolute"><img class="" style="" src="/media/cutout/2023/char-check-gold-rate.png<?php echo $ver ?>" alt="Check Gold Rate" title="Check Gold Rate"></div>
+					<!-- <div class="fg-img absolute"><img class="" style="" src="/media/cutout/2023/char-check-gold-rate.png<?php echo $ver ?>" alt="Check Gold Rate" title="Check Gold Rate"></div> -->
+					<div class="fg-img absolute"><img class="" style="" src="https://whitegold.money/cms/../content/cms/check-gold-rate-ka-new.png<?php echo $ver ?>" alt="Check Gold Rate" title="Check Gold Rate"></div>
 				</div>
 				<div class="row mt-50">
 					<div class="columns small-12 medium-9 large-8">
@@ -34,7 +35,7 @@
 			<div class="mt-50 columns small-12 medium-5 large-4">
 				<div class="report-malpractice-grid row">
 					<div class="video hidden">
-						<a href="" class="watch-video block row fill-neutral-4">
+						<a href="#" class="watch-video block row fill-neutral-4">
 							<div class="columns small-6">
 								<div class="thumbnail" style="background-image: url('');"></div>
 							</div>
@@ -45,7 +46,7 @@
 						</a>
 					</div>
 					<div class="video hidden">
-						<a href="" class="watch-video block row fill-neutral-4">
+						<a href="#" class="watch-video block row fill-neutral-4">
 							<div class="columns small-6">
 								<div class="thumbnail" style="background-image: url('');"></div>
 							</div>

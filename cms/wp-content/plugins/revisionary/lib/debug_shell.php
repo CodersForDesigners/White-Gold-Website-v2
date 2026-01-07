@@ -1,5 +1,5 @@
 <?php // avoid bombing out if the actual debug file is not loaded
-if( basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME']) )
+if (!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename(esc_url_raw($_SERVER['SCRIPT_FILENAME'])) )
 	die();
 
 if ( ! function_exists('d_echo') ) {
@@ -33,7 +33,7 @@ function rvy_log_mem_usage( $label, $display_total = true ) {
 }
 
 if ( ! function_exists('dump') && !defined('REVISIONARY_NO_DUMP_FUNCTION') ) {
-function dump(&$var, $info = FALSE, $display_objects = true) { 
+function dump(&$var, $info = FALSE, $display_objects = true) { 		// phpcs:ignore PublishPressStandards.Debug.DisallowDebugFunctions.FoundDumpFunction
 	return; 
 }
 }

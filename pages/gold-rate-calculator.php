@@ -7,6 +7,7 @@
  *
  */
 
+
 \BFS\CMS\WordPress::setupContext();
 
 // If a post revision or preview is being viewed, and the user is not authorized to view it, simply return to the home page
@@ -18,6 +19,9 @@ require_once __ROOT__ . '/pages/partials/header-custom.php';
 
 ?>
 <?php require_once __ROOT__ . '/pages/section/header.php'; ?>
+
+
+
 <div class="why-whitegold">
 <?php require_once __ROOT__ . '/pages/section/includes/slider-lp.php'; ?>
 <?php require_once __ROOT__ . '/pages/section/includes/menu-below-slider.php'; ?>

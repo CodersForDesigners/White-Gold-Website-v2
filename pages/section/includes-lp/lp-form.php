@@ -1,36 +1,36 @@
-<section class="sell-gold-form-section space-100-top space-200-bottom js_sell_gold_form_section" id="sell-gold-form-section" data-section-title="Sell Gold Form Section" data-section-slug="sell-gold-form-section">
+<section class="w sell-gold-form-section space-100-top space-200-bottom js_sell_gold_form_section" id="sell-gold-form-section" data-section-title="Sell Gold Form Section" data-section-slug="sell-gold-form-section">
 	<div class="container">
 		<div class="row sell-gold-form">
 			<div class="columns small-6 medium-5 large-4 space-100-bottom">
 				<div class="logo space-75-bottom">
 					<img class="block" src="/media/whitegold-logo-dark.svg<?php echo $ver ?>">
 				</div>
-				<div class="h2 line-height-small">Looking to sell gold in <span class="strong line-h-1"><?php the_field('add_locationn');?></span></div>
+				<div class="h2 line-height-small">Looking for Gold Buyers in <span class="strong line-h-1"><?php the_field('add_locationn');?></span></div>
 			</div>
 			<br class="hide-large hide-xlarge">
 			<div class="columns small-9 medium-5 large-3 large-offset-1">
-				<div class="form-card row fill-light">
-					<form class="form form-base js_sell_gold_form" onsubmit="event.preventDefault()">
+				<div class="form-card row fill-light">		
+				<form class="form form-base js_sell_gold_form_new" action="/cms/wp-content/themes/braun/sell-gold-lead-handler.php" method="post">
 						<div class="columns small-12">
-							<label class="form-label block">
-								<input type="text" placeholder="Full Name" class="form-input-field block js_form_input_name">
-								<span class="form-label-title medium fill-light cursor-pointer">Full Name</span>
+							<label class=" block">
+								<input type="text" name="name" placeholder="Full Name" class="form-input-field block" required>
+								<!-- <span class="form-label-title medium fill-light cursor-pointer">Full Name</span> -->
 							</label>
 						</div>
+
+
 						<div class="columns small-12 space-50-top">
-							<label class="form-label block">
-								<input type="text" placeholder="Quantity (in grams)" class="form-input-field block js_form_input_quantity">
-								<span class="form-label-title medium fill-light cursor-pointer">Quantity (in grams)</span>
+							<label class=" block">
+								<input type="number" name="gross_weight" placeholder="Quantity (in grams)" class="form-input-field block" required>
+								<!-- <span class="form-label-title medium fill-light cursor-pointer">Quantity (in grams)</span> -->
 							</label>
 						</div>
+
+
 						<div class="columns small-12 space-50-top">
-							<label class="phone-verify form-label block">
-								<input type="text" class="form-input-field phone-number block js_form_input_phonenumber">
-								<select class="form-input-field country-code js_phone_country_code">
-									<?php require __ROOT__ . '/pages/snippet/phone-country-codes.php' ?>
-								</select>
-								<input type="text" disabled="" class="form-input-field country-code-label js_phone_country_code_label js_phone_country_code" value="+91">
-								<span class="country-code-divider material-icons" data-icon="unfold_more"></span>
+							<label class=" form-label block">
+								<input type="text" name="mobile" required class="form-input-field w-100">
+								<!-- <span class="country-code-divider material-icons" data-icon="unfold_more"></span> -->
 								<span class="form-label-title medium fill-light cursor-pointer">Mobile Number</span>
 							</label>
 						</div>
@@ -41,7 +41,7 @@
 							<label class="form-label block">
 								<span class="form-label-title hidden medium fill-light cursor-pointer">Submit</span>
 								<button class="button fill-blue-1" type="submit">
-									<span class="button-label js_submit_label">Sell Gold</span>
+									<span class="button-label">Sell Gold</span>
 									<img class="button-icon tall" src="/media/icon/rupee-tall-blue.svg<?php echo $ver ?>">
 								</button>
 							</label>
@@ -55,25 +55,30 @@
 								</div>
 							</a>
 						</div>
-					</form>
-					<div class="form form-thankyou">
-						<div class="columns small-12">
-							<div class="h4 strong space-25-bottom">Thank You</div>
-							<div class="p">We'll get in touch with you soon.</div>
-						</div>
-					</div>
-				</div>
+					</form>	
+		</div>
 			</div>
 		</div>
-		<div class="char"><img class="block" src="<?php the_field('add_form_bg_image');?>" alt="Looking to sell gold in <?php the_field('add_locationn');?>"></div>
+		
+<div class="char"><img class="block" src="<?php the_field('add_form_bg_image');?>" alt="Looking to sell gold in <?php the_field('add_locationn');?>"></div>
+
 	</div>
 </section>
+
+
 <style>
-.sell-gold-form-section .char{
-	left: 54%;
+    .w.sell-gold-form-section .form-input-field {
+    color: #000;
+}
+
+.w.sell-gold-form-section .form-input-field::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+.w.sell-gold-form-section .w-100{
+    width: 100%;
 }
 </style>
-
-
 
 

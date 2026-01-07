@@ -66,6 +66,40 @@
 			</div>
 		</div>
 		<?php /* Originally, the char-6085.png image was used; it was 1000x1500 and it didn't require any adjustment in CSS */ ?>
-		<div class="char"><img class="block" src="/media/cutout/2023/char-pointing-up.png<?php echo $ver ?>" alt="jewelry buyer near me" title="jewelry buyer near me"></div>
+		<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if (
+    $current_url_path == '/ka' ||
+    $current_url_path == '/tn'
+) {
+    echo '<div class="char"><img class="block" src="/media/cutout/2023/char-pointing-up.png' . $ver . '" alt="jewelry buyer near me" title="jewelry buyer near me"></div>';
+}
+?>
+
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if (
+    $current_url_path == '/ts' ||
+    $current_url_path == '/ap'
+
+) {
+    echo '<div class="char"><img class="block" src="/cms/../content/cms/ap-img-form.png' . $ver . '" alt="jewelry buyer near me" title="jewelry buyer near me"></div>';
+}
+?>
+
+
+
+
+<?php
+$current_url_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if (
+    $current_url_path == '/kl'
+) {
+    echo '<div class="char"><img class="block" src="https://whitegold.money/cms/../content/cms/kerala_img-1.png' . $ver . '" alt="jewelry buyer near me" title="jewelry buyer near me"></div>';
+}
+?>
 	</div>
 </section>

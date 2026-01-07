@@ -187,6 +187,8 @@ require __ROOT__ . '/pages/snippet/search-bar.php';
 
 </script>
 
+
+
 <?php require_once __ROOT__ . '/pages/partials/footer.php'; ?>
 
 <?php

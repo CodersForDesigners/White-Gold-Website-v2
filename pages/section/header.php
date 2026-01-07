@@ -1,3 +1,4 @@
+<header>
 <?php
 
 require_once __ROOT__ . '/pages/snippet/menu.php'; 
@@ -17,7 +18,7 @@ require_once __ROOT__ . '/pages/snippet/menu.php';
 		<div class="row">
 			<div class="columns small-6 inline-middle">
 				<a class="logo inline" href="/">
-					<img class="block" src="/media/whitegold-logo-light.svg<?php echo $ver ?>" alt="whitegold">
+					<img class="block" src="/media/whitegold-logo-light.svg<?php echo $ver ?>" alt="whitegold" title="white-gold-logo">
 				</a>
 			</div>
 			<div class="columns small-6 inline-middle text-right">
@@ -53,3 +54,4 @@ require_once __ROOT__ . '/pages/snippet/menu.php';
 	</div>
 </section>
 <!-- END: Sticky Menu Section -->
+</header>

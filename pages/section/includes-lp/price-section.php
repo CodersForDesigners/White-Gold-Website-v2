@@ -19,7 +19,7 @@
     <tr>
       <td>
       <div class="d-lg-flex mt-4 mb-2">
-    <img src="https://staging.whitegold.money/cms/../content/cms/Group-3258.svg" class="img-fluid" alt="">
+    <img src="/cms/../content/cms/Group-3258.svg" class="img-fluid" alt="Gold-Buyers">
     <h6 class="title1">Gold Testing</h6>
 </div>
       </td>
@@ -38,7 +38,7 @@
 <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="https://staging.whitegold.money/cms/../content/cms/Group-3259.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-3259.svg" class="img-fluid" alt="sell-gold">
     <h6 class="title1">Accuracy</h6>
 </div></td>
       <td> <ul>
@@ -51,7 +51,7 @@
     <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="https://staging.whitegold.money/cms/../content/cms/Group-3260.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-3260.svg" class="img-fluid" alt="Gold Buyers">
     <h6 class="title1">Staff</h6>
 </div></td>
 <td> <ul>
@@ -64,7 +64,7 @@
     <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="https://staging.whitegold.money/cms/../content/cms/Group-3261.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-3261.svg" class="img-fluid" alt="sell-gold">
     <h6 class="title1">Testing Methods</h6>
 </div></td>
       <td><ul>
@@ -77,7 +77,7 @@
     <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="https://staging.whitegold.money/cms/../content/cms/Group-3262.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-3262.svg" class="img-fluid" alt="branches">
     <h6 class="title1">Branches</h6>
 </div></td>
 <td><ul>
@@ -90,7 +90,7 @@
     <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="https://staging.whitegold.money/cms/../content/cms/Group-3263.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-3263.svg" class="img-fluid" alt="tamper proof">
     <h6 class="title1">Tamper Proof</h6>
 </div></td>
 <td><ul>
@@ -103,7 +103,7 @@
     <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="https://staging.whitegold.money/cms/../content/cms/Group-3264.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-3264.svg" class="img-fluid" alt="gold rates">
     <h6 class="title1">Gold Rate</h6>
 </div></td>
 <td><ul>
@@ -116,7 +116,7 @@
     <tr>
       
       <td><div class="d-lg-flex mt-4 mb-2">
-    <img src="https://staging.whitegold.money/cms/../content/cms/Group-3265.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-3265.svg" class="img-fluid" alt="billing">
     <h6 class="title1">Billing</h6>
 </div></td>
 <td><ul>
@@ -131,7 +131,7 @@
     <tr>
       
       <td class="border-bottom-left"><div class="d-lg-flex mt-4 mb-2">
-    <img src="https://staging.whitegold.money/cms/../content/cms/Group-3266.svg" class="img-fluid">
+    <img src="/cms/../content/cms/Group-3266.svg" class="img-fluid" alt="safety">
     <h6 class="title1">Safety</h6>
 </div></td>
 <td class="border-bottom-right"><ul>

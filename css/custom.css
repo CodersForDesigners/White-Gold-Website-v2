@@ -1067,3 +1067,66 @@ border-top: none;
 .arrow {right: 5px;top: 5px;}
 .arrow-custom {width: 50px;height: 24px;background-position: right 0% bottom 45%;background-size: contain;background-repeat: no-repeat;background-image: url(/cms/../content/cms/Ellipse-294.png);}
 /* gold buyers in india css end */
+
+
+/* carousal 1st slider css start */
+.bfc-ban {width:40%; padding-top:150px; }
+
+
+@media (max-width:600px)  {
+.bfc-ban{width:100%; padding-top:0px; }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    #landing-carousel-section .carousel-list-item:first-child .carousel-card{
+        width: 60%;
+    }
+     #landing-carousel-section .carousel-list-item:nth-child(2) .carousel-card{
+        width: 60%;
+    }
+
+.bfc-ban{width: 55%; padding-top: 0px; margin-left: 120px;}
+
+.box-testimonials .d-lg-flex{
+display:block!important;
+}
+}
+/* carousal 1st slider css END*/
+
+.align-self-center {
+    align-self: center !important;
+}
+
+.rcb-banner {
+    width: 40%;
+    padding-top: 150px;
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .rcb-banner {
+        width: 55%;
+        padding-top: 0px;
+        margin-left: 120px;
+    }
+
+#landing-carousel-section .carousel-list-item:nth-child(3) .carousel-card {
+        width: 60%;
+    }	
+
+}
+
+@media only screen and (max-width: 767px) {
+   .rcb-banner {
+        width: 100%;
+        padding-top: 0px;
+    }
+}
+
+.blog-detail h3{
+font-size:22px!important;	
+}
+
+.blog-detail h2{
+font-size:26px!important;
+}
+
+

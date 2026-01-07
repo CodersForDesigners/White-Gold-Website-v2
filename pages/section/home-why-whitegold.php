@@ -26,7 +26,7 @@
 </div>
 <div class="text-center mt-3">
 <div class="">
-<a class="btn-primary-blue" href="https://whitegold.money/why-whitegold/">Learn More</a></div>
+<a class="btn-primary-blue" href="https://whitegold.money/why-whitegold/" aria-label="Know More">Know More</a></div>
     </div>
 </div>
 </div>

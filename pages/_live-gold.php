@@ -125,16 +125,14 @@ require_once __ROOT__ . '/pages/partials/header.php';
 			<div class="container">
 				<div class="otp-verify message columns small-9 medium-5 large-3">
 					<div class="form-card row fill-light">
-						<form class="form form-base js_live_gold_form" onsubmit="event.preventDefault()">
+						<form class="form form-base js_live_gold_form">
 							<div class="columns small-10 space-50-bottom">
 								<div class="h5 strong">Get a guaranteed ‘Gold Rate’ in any White Gold branch in your city</div>
 							</div>
 							<div class="columns small-12 space-50-top">
 								<label class="phone-verify form-label block">
 									<input type="text" class="form-input-field phone-number block js_form_input_phone_number">
-									<select class="form-input-field country-code js_phone_country_code">
-										<?php require __ROOT__ . '/pages/snippet/phone-country-codes.php' ?>
-									</select>
+									
 									<input type="text" disabled="" class="form-input-field country-code-label js_phone_country_code_label js_form_input_phone_country_code" value="+91">
 									<span class="country-code-divider material-icons" data-icon="unfold_more"></span>
 									<span class="form-label-title medium fill-light cursor-pointer">Mobile Number</span>
@@ -245,6 +243,36 @@ require_once __ROOT__ . '/pages/partials/header.php';
 	<!-- End: Hide Live Gold Messages -->
 </section>
 <!-- END: Live Gold Section -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How to calculate gold rate?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can calculate the gold rate by multiplying the price per gram by the weight in grams. Then, add making charges and apply 3% GST. Final formula: Gold Rate = (Price/Gram × Weight) + Making Charges + GST"
+    }
+  }, {
+    "@type": "Question",
+    "name": "How do jewellers calculate gold price?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Jewellers calculate the gold price using the formula: (Gold Rate per gram × Weight) + Making Charges + 3% GST. They also consider purity like 22K or 24K, current market rate, and fixed or percentage-based making charges."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is the formula for calculating gold rate?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Gold Rate = (Price per gram × Weight) + Making Charges + GST (usually 3%)"
+    }
+  }]
+}
+</script>
+
 
 
 

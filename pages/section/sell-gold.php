@@ -23,11 +23,11 @@
 							</div>
 						</label>
 						<!-- <div class="card-content" style="--bg-image: url( '/media/background/find-branch.png<?= $ver ?>' )"> -->
-						<div class="card-content px-50">
+						<div class="branch card-content px-50">
 							<div class="row space-50-top _space-200-top-bottom">
 								<div class="columns small-9 small-offset-1 px-50 space-50-bottom">
-									<div class="h4 medium space-25-bottom" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.35)">60+ Branches</div>
-									<div class="h5 medium mb-200 md:mb-0" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.35)">Across Karnataka, <br>Tamil Nadu and <br>Kerala</div>
+									<div class="h4 medium space-25-bottom" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.35)">100+ Branches</div>
+									<div class="h5 medium mb-200 md:mb-0" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.35)">Across Karnataka, Andhra Pradesh,<br> Kerala & Telangana</div>
 									<a href="/<?= REGION ?>/branches" class="button fill-light" style="margin-top: var(--space-150);">
 										<span class="button-label">Find Branch&ensp;</span>
 										<img class="button-icon tall" alt="location" src="/media/icon/location-tall-red.svg<?= $ver ?>">
@@ -283,3 +283,14 @@
 	} );
 
 </script>
+<style>
+@media (max-width:480px)  {
+.branch.card-content .h5{
+font-size:18px;
+}
+}
+.step-cards .sgs1 .card-content .bg-img, .step-cards .rgs1 .card-content .bg-img {
+    bottom: -20px;
+}
+
+</style>

@@ -1,4 +1,18 @@
 <?php
+/**
+ |
+ | Branches
+ |
+ | An custom ACF field group has been created for this type.
+ | It is configured to manifest as both a Gutenberg block as well as a traditional meta-box.
+ | This is because the WordPress REST API only exposes ACF fields if they are saved in a meta-field.
+ | But the block version of ACF fields are more performant to load, and save.
+ | Hence, we hide (not disable) the meta-box version of the ACF fields.
+ | On saving the post, the values from the block version are copied over to the meta-box version.
+ | This way, we get the best of both worlds.
+ |
+ |
+ */
 
 namespace BFS\Types;
 
@@ -125,6 +139,19 @@ class Branches {
 		add_action( 'bfs/backend/on-screen', function ( $screenId ) {
 			if ( $screenId !== self::$typeSlug )
 				return;
+
+			/**
+			 |
+			 | Since two sets of the same ACF fields are presented on the edit screen
+			 | 	(one as part of a Gutenberg block and the other as meta-boxes),
+			 | 	hide the meta-box version.
+			 | (see comment at the top for full context)
+			 |
+			 */
+			add_filter( 'acf/pre_render_fields', function ( $fields, $postId ) {
+				return false;
+			}, 10, 2 );
+
 			WordPress::enqueueScript( 'hide-region-tag-panel', '/js/hide-region-tag-panel.js' );
 			WordPress::enqueueScript( 'branches', '/js/branches.js' );
 		} );
@@ -176,6 +203,17 @@ class Branches {
 				$postTitle = $postTitle . ', ' . strtoupper( $region );
 		}
 		wp_update_post( [ 'ID' => $postId, 'post_title' => $postTitle ], false, false );
+
+		/*
+		 |
+		 | Copy all the ACF _block_ field values over to the ACF _meta-box_ fields,
+		 | 	so that these values will be accessible through the REST API
+		 | (see comment at the top for full context)
+		 |
+		 */
+		foreach ( $thePost->get( 'acf' ) as $key => $value ) {
+			update_field( $key, $value, $postId );
+		}
 
 
 		/*

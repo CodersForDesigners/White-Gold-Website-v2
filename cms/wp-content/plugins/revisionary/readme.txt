@@ -1,62 +1,84 @@
-=== PublishPress Revisions: Submit, Moderate, Schedule and Approve Revisions ===
+=== PublishPress Revisions: Duplicate Posts, Submit, Approve and Schedule Content Changes ===
 
 Contributors: publishpress, kevinB, stevejburge, andergmartins
 Author: PublishPress
 Author URI: https://publishpress.com
-Tags: revision, submit changes, workflow, collaboration, permissions, moderate, posts, schedule revisions
-Requires at least: 4.9.7
-Requires PHP: 5.6.20
-Tested up to: 5.7
-Stable tag: 2.5.5
+Tags: revision, submit changes, duplicate post, approve changes, scheduled changes
+Requires at least: 5.5
+Requires PHP: 7.2.5
+Tested up to: 6.8
+Stable tag: 3.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-PublishPress Revisions gives you control over updating published content. Users can submit revisions. You can approve or reject them.
+Control how published content is updated. Users can duplicate posts and submit changes. Then editors can approve, reject or schedule those changes.
 
 == Description ==
 
-PublishPress Revisions gives you control over updating published content. Users can submit revisions. You can approve or reject them.
+PublishPress Revisions is the ultimate tool for making content changes. Users get a safe space to work on content updates. When the changes are ready, they can ask for approval to publish the update. Administrators can approve or reject the changes. They can also schedule them to go live in the future.
 
-Your users can update posts using the normal WordPress editor, but their changes will not be published automatically. Instead, the changes are stored as a revision that can be approved, rejected or scheduled. PublishPress Revisions works with the familiar WordPress interface, including Gutenberg and the Classic Editor.
+Your users can update posts using the normal WordPress editor, but their changes will not be published automatically. Instead, the changes are stored in a "Revision Queue". The changes can be approved, rejected or scheduled. PublishPress Revisions works with the familiar WordPress interface, including Gutenberg and the Classic Editor.
 
-The Free version of PublishPress Revisions supports the WordPress core. The Pro version of PublishPress Revisions supports ACF, Yoast SEO, PODS, WooCommerce, WPML, Elementor, Beaver Builder, and many more plugins and themes.
+## PublishPress Revisions Pro ##
 
-= Submit Change Requests for Posts =
+> <strong>Upgrade to Revisions Pro</strong><br />
+> This plugin is the free version of the Revisions Pro plugin. The Free version of PublishPress Revisions supports the WordPress core. The Pro version of PublishPress Revisions supports ACF, Yoast SEO, PODS, WooCommerce, WPML, Elementor, Beaver Builder, and many more plugins and themes. <a href="https://publishpress.com/revisions"  title="Revisions Pro">Click here to purchase the best premium WordPress content update plugin now!</a>
+
+## Submit Change Requests for Posts ####
 PublishPress Revisions allows your users to submit change requests for published posts. Your users can update posts using the normal WordPress editor, but their changes will not be published automatically. Instead, the changes are stored as a "pending revision" that can be approved or rejected.
+
 [Click here to see how to submit revisions](https://publishpress.com/knowledge-base/revisions-start/).
 
-= Schedule Future Updates to Posts =
+## Schedule Future Updates to Posts ##
+
 PublishPress Revisions allows you to schedule WordPress revisions to be published in the future. When you're editing a published post, all you need to do is select a future date and click "Schedule Revision". Your changes will be published at the specified time.
+
 [Click here to see how to schedule revisions](https://publishpress.com/knowledge-base/schedule-revisions-future/).
 
-= Manage and Moderate Changes to Content =
-After you create a revision with PublishPress Revisions, you can find that revision on the Revision Queue screen. This screen shows you all the revisions that have been submitted for approval. Underneath each revision you can choose from several moderation tools: Edit, Delete, Preview and Compare.
+## Manage and Moderate Changes to Content ##
+
+After you create a revision with PublishPress Revisions, you can find that revision on the Revision Queue screen. This screen shows you all the revisions that have been submitted for approval. Underneath each duplicate post you can choose from several moderation tools: Edit, Delete, Preview and Compare.
+
 [Click here to see how to manage and moderate revisions](https://publishpress.com/knowledge-base/schedule-or-publish-revisions/).
 
-= Compare Current and Former Versions =
+## Compare Current and Former Versions ##
 Pending and Scheduled Revisions can include changes to post content, categories, tags, featured image, page parent and other options. Each of these changes can be reviewed in the familiar Compare Revisions interface.
+
 [Click here to see how to compare revisions](https://publishpress.com/knowledge-base/compare-revisions/).
 
-= Frontend Moderation of Changes =
+## Frontend Moderation of Content Changes ##
+
 It is possible to preview and moderate revisions via the frontend of your WordPress site. If you click Preview for a pending revision, you'll see a toolbar across the frontend of the site. This toolbar will change color so you can easily know the status of the revision. For example, if you're looking at a pending revision, the toolbar will be green. For scheduled revisions, the toolbar will be grey.
+
 [Click here to see how to manage from the frontend of your site](https://publishpress.com/knowledge-base/publishing-revisions-frontend/).
 
-= Email Notifications for Revisions =
+## Email Notifications for Revisions ##
+
 PublishPress Revisions will notify Administrators and Editors when a new revision is submitted. They can log in to preview, compare and approve the changes. PublishPress Revisions can also send emails for revision approval and publication. The Settings screen lets you disable unwanted notifications.
+
 [Click here for more on revision notifications](https://publishpress.com/knowledge-base/emails-revisionary/).
 
-= Additional Supported Plugins in the Pro Version =
-* Advanced Custom Fields integration
-* BeaverBuilder integration (front end revision submission)
-* WPML integration (revision queue follows language filter)
-* Pods compatibility
-* The Events Calendar compatibility
-* WooCommerce compatibility
-* Yoast SEO compatibility
+## Additional Plugins Supported in the Pro Version ##
+
+Page builder / front end editing integrations:
+
+* BeaverBuilder integration 
+* Divi Theme, Divi Builder integration
+* Elementor integration 
+
+Major plugins we maintain compatibility with:
+
+* Advanced Custom Fields
+* Pods
+* WPML
+* The Events Calendar
+* WooCommerce
+* Yoast SEO
 
 [Click here for the full list of supported plugins in the Pro version](https://publishpress.com/knowledge-base/plugins-revisions-support/).
 
-= Revision Permissions =
+## You Can Set Very Detailed Revision Permissions ##
+
 PublishPress Revisions works with the default WordPress user roles, and also introduces a Revisor role:
 
 * Contributors can submit revisions to their own published posts.
@@ -66,43 +88,634 @@ PublishPress Revisions works with the default WordPress user roles, and also int
 To schedule changes to a published post, just set the desired future date before hitting Update.
 
 By upgrading to Revisions Pro, you also gain advanced permissions control through the PublishPress Permissions Pro plugin. You can customize permissions by role or per-user, granting full editing or revision submission rights to specific posts, categories, or taxonomy terms.
+
 [Click here for more on revision permissions](https://publishpress.com/knowledge-base/permissions-revisions).
 
-= Join PublishPress and get the Pro plugins =
+## Join PublishPress and get the Pro plugins ##
+
+The Pro versions of the PublishPress plugins are well worth your investment. The Pro versions have extra features and faster support. [Click here to join PublishPress](https://publishpress.com/pricing/).
+
+Join PublishPress and you'll get access to these ten Pro plugins:
+
 * [PublishPress Authors Pro](https://publishpress.com/authors) allows you to add multiple authors and guest authors to WordPress posts.
+* [PublishPress Blocks Pro](https://publishpress.com/blocks) has everything you need to build professional websites with the WordPress block editor.
 * [PublishPress Capabilities Pro](https://publishpress.com/capabilities) is the plugin to manage your WordPress user roles, permissions, and capabilities.
 * [PublishPress Checklists Pro](https://publishpress.com/checklists) enables you to define tasks that must be completed before content is published.
-* [PublishPress Permissions Pro](https://publishpress.com/permissions) is the plugin for advanced WordPress permissions.
-* [PublishPress Pro](https://publishpress.com/publishpress) is the plugin for managing and scheduling WordPress content.
+* [PublishPress Future Pro](https://publishpress.com/future)  is the plugin for scheduling changes to your posts.
+* [PublishPress Permissions Pro](https://publishpress.com/permissions)  is the plugin for restricted content and advanced WordPress permissions.
+* [PublishPress Planner Pro](https://publishpress.com/publishpress) is the plugin for managing and scheduling WordPress content.
 * [PublishPress Revisions Pro](https://publishpress.com/revisions) allows you to update your published pages with teamwork and precision.
+* [PublishPress Series Pro](https://publishpress.com/series) enables you to group content together into a series.
+* [PublishPress Statuses Pro](https://publishpress.com/series) enables you to create additional publishing steps for your posts.
 
-The Pro versions of the PublishPress plugins are well worth your investment. The Pro versions have extra features and faster support. 
-[Click here to join PublishPress](https://publishpress.com/pricing/).
+Together, these plugins are a suite of powerful publishing tools for WordPress. If you need to create a professional workflow in WordPress, with moderation, revisions, permissions and more, then you should try PublishPress.
 
-Together, these plugins are a suite of powerful publishing tools for WordPress. If you need to create a professional workflow in WordPress, with moderation, revisions, permissions and more then you should try PublishPress.
-
-= Bug Reports =
+## Bug Reports ## 
 Bug reports for PublishPress Revisions are welcomed in our [repository on GitHub](https://github.com/publishpress/publishpress-revisions). Please note that GitHub is not a support forum, and that issues that aren't properly qualified as bugs will be closed.
 
-= Follow the PublishPress team = 
+## Follow the PublishPress team ## 
+
 Follow PublishPress on [Facebook](https://www.facebook.com/publishpress), [Twitter](https://www.twitter.com/publishpresscom) and [YouTube](https://www.youtube.com/publishpress)
 
 == Screenshots ==
 
-1. Low-level user submits a "Pending Revision" to a Published Page 
-2. Email Notification Recipients (optionally adjustable)
-3. Pending Revision Confirmation
-4. Pending Revisions in Dashboard Right Now Count
-5. Revision Queue: filterable list of Pending, Scheduled Revisions
-6. Revision Queue actions
-7. Pending Revision Revision Preview / Approval
-8. Compare Pending and Scheduled Revisions using the familiar UI
-9. Scheduled Revision Creation (unrestricted editor)
-10. Scheduled Revision Confirmation
-11. Scheduled Revision Preview
-12. Scheduled Revisions in Publishing Soon list
+1. Schedule Revisions: PublishPress Revisions allows you to schedule WordPress revisions to be published in the future. 
+2. Control Revision Permissions: PublishPress Revisions allows you to control which users are able to submit revisions to published posts. 
+3. Submit Revisions: PublishPress Revisions enables you to submit change requests for published posts. 
+4. Preview and Compare Revisions: Every requested change can be reviewed in the normal "Compare Revisions" interface in WordPress.
+5. Manage and Moderate Revisions: PublishPress Revisions has a Revision Queue screen where you can search, approve, or deny changes to a published post's content.
+6. Email Notifications for Revisions: Administrators and Editors are notified by email when a new revision is submitted. PublishPress Revisions can also send emails for revision approval and publication.
+7. Support for Plugins: Revisions Pro adds support for the plugins such as Yoast SEO, WooCommrce and Advanced Custom Fields.
+8. Divi, Beaver Builder Integration: With Revisions Pro, your Contributors and Revisors will be able to submit revisions to published content using the front end editor of the Divi theme or Beaver Builder plugin.
+9. WPML Integration: With Revisions Pro, pending and scheduled revisions work in multi-language sites controlled by the WPML plugin. 
+10. Advanced Permissions: By upgrading to Revisions Pro, you also gain advanced permissions control through Permissions Pro. Customize permissions by role or per-user.
+
+== Frequently Asked Questions ==
+
+= How do I duplicate pages or other post types? =
+
+PublishPress Revisions can duplicate pages and any other post types. For example, to duplicate pages, go to the "Pages" screen in WordPress and click "New Revision" next to any page. You will be taken to a duplicate page that you can edit and save to the Revision Queue.
+
+= How do I duplicate WooCommerce products? =
+
+WooCommerce is the most popular way to build a WordPress eCommerce site. With PublishPress Revisions Pro you can submit, moderate, approve and schedule revisions to your WooCommerce products.
+
+When you are on the "Products" screen, click the "New Revision" link. Inside the product revision, the PublishPress buttons will appear in the top-right corner. When you save the product, it will appear on the main "Revision Queue" screen. 
+
+It is possible to schedule updates to WooCommerce products.
+
+- While updating an post or page created created with Elementor, click "Immediately" in the right sidebar.
+- Choose the new date for these changes to go live.
+- Click the "Update Revision" button.
+
+All key WooCommerce fields are supported by PublishPress Revisions Pro. If you are using 3rd party WooCommerce plugins, we do recommend testing their compatibility with WordPress revisions and PublishPress Revisions Pro. 
+
+[Click here for more on duplicate WooCommerce products](https://publishpress.com/knowledge-base/permissions-revisions).
+
+= How do I duplicate Elementor pages and posts? =
+
+PublishPress Revisions Pro has support for the Elementor plugin.
+
+Here's how to use PublishPress Revisions and Elementor together:
+
+- Find and a published post or page that was created with Elementor.
+- You will see a "New revision" link.
+- On the next screen, you can click "Edit with Elementor" to make changes.
+- You can use "Submit Revision" in the right sidebar to submit your changes. 
+- In the WordPress admin area, you can go to visit the "Revision Queue" screen and you will see the submitted revision of your Elementor page. It will be waiting for your approval.
+
+It is possible to schedule content updates to Elementor posts.
+
+- While updating an post or page created created with Elementor, click "Immediately" in the right sidebar.
+- Choose the new date for these changes to go live.
+- Click the "Update Revision" button.
+
+[Click here for more on duplicate Elementor posts](https://publishpress.com/knowledge-base/publishpress-revisions-elementor/).
+
+= How do I duplicate The Events Calendar events? =
+
+The Events Calendar plugin is one the most popular ways to create and list events in WordPress. PublishPress Revisions Pro and The Events Calendar work together successfully.
+
+- Make sure you are using the Gutenberg option for creating events.
+- After installing PublishPress Revisions Pro, you will be able to submit revisions to events using the New Revision option on the main Events screen.
+- You will see the normal Event screen, but with additional PublishPress Revisions button in the top-right corner.
+- Your event revisions will appear in the "Revision Queue".
+- You will not be able to use the "Compare" link because The Events Calendar does not support that WordPress feature yet. However, all the other key features of PublishPress Revisions Pro will work. For example, PublishPress Revisions Pro will record changes to all your event fields and settings.
+
+[Click here for more on duplicate The Events Calendar events](https://publishpress.com/knowledge-base/revisions-events-calendar/).
+
+= How do I duplicate posts with Advanced Custom Fields? =
+
+PublishPress Revisions Pro has support for the Advanced Custom Fields (ACF) plugin. You can schedule, moderate and approve revisions for content that uses ACF.
+
+- To create a revision for post that use ACF, click on the "New Revision" link.
+- Go to the "Revision Queue".
+- Click "Edit" and you can update the revision, including the ACF fields.
+- Click "Compare" and you can see what's changed in this revision. The "Compare" screen will show you any changes that have happened with ACF Fields.
+
+[Click here for more on duplicate posts with Advanced Custom Fields](https://publishpress.com/knowledge-base/revisionary-acf/).
+
+= How do I duplicate posts with WPML? =
+
+PublishPress Revisions Pro has support for the WPML plugin. For example, you can create revisions for a post in English and create separate revisions for the Spanish translation of that post.
+
+- Go to your "Posts" screen.
+- Click "New Revisions" and you can create a translated version of your content in any language. 
+
+[Click here for more on duplicate posts with WPML](https://publishpress.com/knowledge-base/revisionary-wpml/).
+    
+= How do I duplicate posts with Yoast SEO? =
+
+Yoast SEO is the most popular SEO plugin in WordPress. With PublishPress Revisions Pro you can submit, moderate, approve and schedule revisions to your WordPress posts, and they will keep all your SEO data.
+
+In the image below, you can Yoast SEO data. With PublishPress Revisions Pro you enter this data and it will be saved throughout the revision approval process.
+
+[Click here for more on duplicate posts with Yoast SEO](https://publishpress.com/knowledge-base/revisions-yoast-seo/).
+    
+= How do I duplicate posts with Beaver Builder? =
+
+PublishPress Revisions Pro has support for the Beaver Builder plugin. Here's how to use PublishPress Revisions Pro and Beaver Builder together:
+
+- In your WordPress admin area, click "New Revision" for a post or page that uses Beaver Builder.
+- On the next screen, you will be able to click "Launch Beaver Builder" and create a new version of this post.
+- Click "Submit Revision" to submit your updates.
+- In the WordPress admin area, you can visit the "Revision Queue" screen and you will see the submitted revision of your Beaver Builder page. It will be waiting for your approval.
+
+It is also possible to schedule revisions to Beaver Builder content.
+
+- When you're editing a revision, click "Immediately".
+- Choose the date you want your post changes to go live.
+- Click the "Submit Revision" button.
+
+[Click here for more on duplicate posts with Beaver Builder](https://publishpress.com/knowledge-base/revisionary-beaver-builder/).
+
+= How do I duplicate posts with Divi Theme and Builder? =
+
+Divi is one of the most popular page-builders in WordPress, and it does integrate with PublishPress Revisions Pro. It is possible for lower-level users to edit a page with Divi and submit an update for approval. This workflow will apply to anyone with the correct permissions to submit revisions.
+
+- In your WordPress admin area, click "New Revision" for a post or page that uses Divi.
+- You will see the normal editing layout in Divi, with the PublishPress Revisions buttons in the top toolbar and right sidebar. Click "Edit With The Divi Builder" to make content changes.
+
+[Click here for more on duplicate posts with Divi](https://publishpress.com/knowledge-base/divi-theme/).
+
+== Upgrade Notice ==
+
+= 3.5.16 =
+Fixed: Security issue. Please update.
 
 == Changelog ==
+
+= 3.7.4 - 8 Jul 2025 =
+* Compat : WooCommerce - Edit links on Products screen (and other Woo post types) were hidden under some conditions
+* Compat : Various third party plugins - invalid data output on posts listing screen for custom post type
+
+= 3.7.3 - 7 Jul 2025 =
+* Compat : WooCommerce - Administrators and Editors did not have Edit links on Products screen
+* Compat : CMS Tree Page View - JSON output on Page Tree View screen
+
+= 3.7.2 - 3 Jul 2025 =
+* Compat : Better support for custom post types registered as non-public
+* Fixed : PHP Warnings on Edit Posts screen for Revisors and other roles which cannot edit published posts
+* Change : Revisions > Settings > Compare tab removed, options moved to other tabs
+* Change : wordpress-version-notices 2.1.4
+
+= 3.7.1 - 23 Jun 2025 =
+* Feature : Setting to control maximum Past Revisions per post
+* Feature : Setting to disable Archive by post type
+* Change : Improve styling of Features tab tool tips
+
+= 3.7.0 - 19 Jun 2025 =
+* Change : Rearranged Settings to highlight distinction between Past Revisions and New Revisions
+* Change : Settings - Clarify captions for capability requirement settings
+* Change : Settings - Improve mobile styling
+* Change : Use new Capabilities plugin filter to show capability descriptions
+* Change : Archive settings moved to a dedicated tab
+* Change : Compare settings moved to a dedicated tab
+* Change : Revision Creation, Submission and Scheduling settings combined onto a shared "New Revisions" tab
+* Change : Post Editor - Remove "Preview Revision" button after revision creation
+* Fixed : Revision Archive menu and screen were displayed to Subscribers
+
+= 3.6.8 - 4 May 2025 =
+* API : Improve support or Pro plugin's Planner Notifications integration
+
+= 3.6.7 - 1 May 2025 =
+* Fixed : Submit Revision button caption was missing for Revisors
+* Feature : Revision Archive - option to archive past updates of Pending / Scheduled Revisions, even after publication
+* Feature : Archive - Include action link "Edit Parent"
+* Feature : Archive - "Edit Parent" tool tip provides context by specifying "Parent post" or "Parent revision"
+* Change : Archive - Recaption "Method" to "Action"
+* Change : Archive - Clarify Action captions for "Revision Publication" and "Scheduled Revision Publication"
+* Change : Archive - For direct edits, show same user in Revised By and Approved By fields
+* Change : Archive - Hide Count column, which is redundant in this context
+* Fixed : Archive - Action caption for past updates of Submitted / Scheduled revisions: "Edit of Submitted Revision", etc.
+* Fixed : Archive - Published Date was displayed for past updates of Submitted / Scheduled revisions even though the revision has not been published
+* Fixed : Archive - Wrong publication date listed for direct edits
+* Fixed : Archive - Wrong publication date displayed for published revisions under some conditions
+* Fixed : Archive - Bulk deletion checkbox was displayed even if revision archive deletion is disabled 
+* Compat : Prevent PHP Notice if another plugin calls wp_schedule_event() too early
+
+= 3.6.6 - 15 Apr 2025 =
+* Fixed : Updating a post caused post status to be cleared if some prior revisioning operations were performed. This may have only occurred on WPML sites.
+* Fixed : Revision Preview showed "Approve" button if Revision is already scheduled
+* Change : When editing a Revision, recaption "Approve" button to "Schedule" if a future date is selected
+* API : Allow "Decline Revision" status to be filtered to a value other than draft-revision
+* Change : Adjust implementation of "revisionary_unrevisioned_postmeta" filter to prevent third party code from accidentally forcing invalid fields back into comparison display
+
+= 3.6.5 - unreleased =
+* Pro : PublishPress Planner - default Notifications for Post creation / update were triggered by Revision creation / update
+* Pro : PublishPress Planner - support Notification validation safeguards in Planner 4.7.2
+
+= 3.6.4 - 18 Mar 2025 =
+* Compat : PublishPress Planner 3.7.0 - Revisions Pro prevented Planner from creating its standard default Notification Workflows
+
+= 3.6.3 - 14 Mar 2025 =
+* Feature : Option to clear Plugin data on plugin deletion
+* Fixed : After Revision creation in editor, Edit link goes to Queue
+* Fixed : Revision bulk deletion failed with fatal error
+* Fixed : Revision Queue - Database error with some third party plugins
+* Change : Revisions > Settings - Minor changes and clarifications to captions on Revision, Queue, Preview tabs
+
+= 3.6.2 - 24 Feb 2025 =
+* Fixed : Revisions listed on main Posts / Pages screen under some configurations
+
+= 3.6.1 - 20 Feb 2025 =
+* Feature : Support view-only Revision Queue through 'preview_others_revisions' capability (Permissions plugin compatibility requires v4.1.2)
+* Fixed : Previews of home page revisions did not display correctly
+* Fixed : Compare Revisions: Slider movement did not reload comparison correctly
+* Fixed : Revision Queue: Fatal error if Revision Submission was disabled in plugin settings 
+* Fixed : Revision Queue: Revisors could not see own revisions in queue from View link in post editor, or after clicking filtering by Published Post column
+* Compat : PublishPress Authors: If Permissions plugin is active, Revisors could not view revisions in queue if published post has multiple authors
+* Compat : PublishPress Authors: Revisors could not list their own revision after updating it, if "Editing others' revisions requires role capability" setting enabled
+* Compat : W3 Total Cache: Clean cache after revision publication
+
+= 3.6.0 - 29 Jan 2025 =
+* Compat : PublishPress Planner - Fix Revision Status display and selection in Calendar, Content Board, Overview (requires Planner 4.6)
+* Compat : PublishPress Statuses Pro (Custom Revision Statuses)
+* Compat : PublishPress Permissions Pro - Option for Access Circle restrictions to apply to Revisions
+* Fixed : Page Parent revision was not applied to published page
+* Fixed : Revision Archive - Schedule Revision approver was not recorded
+* Fixed : Revision Archive - Scheduled Revisions did not show scheduling time
+* Fixed : Revision Archive - Recent entries had incorrect time display
+* Feature : Revision Archive - Option to store custom fields from submitted, scheduled revisions
+
+= 3.5.16 - 19 Nov 2024 =
+* Security : Under some plugin configurations, Revisors could view other users' revisions (draft, submitted or scheduled) inappropriately
+* Fixed : Revision read capabilities did not limit slider positions on Compare Revisions screen
+* Fixed : WP 6.7 - Avoid early loading of plugin textdomain under some conditions
+
+= 3.5.15 - 8 Oct 2024 =
+* Fixed : Editing a post did not refresh its "Has Revisions" flag
+* Change : Setting to work around cache plugin conflicts by refreshing "Has Revisions" flag before suppressing a "New Revision" link on Posts / Pages screen
+* Change : Hardened security within wp-admin by adding a few missing nonce checks and output escapes
+* Change : PHP Code Sniffer rule compliance - flagged false positives for meaningful pre-release scans
+
+= 3.5.14 - 26 Sep 2024 =
+* Fixed : New Revision link on Posts screen failed due to plugin conflict on some sites
+* Change : New setting (with disclaimer) to disable new unfiltered_html check. Useful on sites where any custom html is unintended and can be stripped out.
+
+= 3.5.13 - 26 Sep 2024 =
+* Fixed : Revision creation by a user with default Revisor capabilities caused custom html tags to be stripped out of post content. Now prevent revision, requiring unfiltered_html capability. 
+* Fixed : Classic Editor - Revisors editing a revision could not select a future date
+* Fixed : Revision approval in "Publish by Revision" mode caused page to be published without a URL
+* Fixed : Revision History - PHP Warning for preg_replace parameter
+* Fixed : Link Whisper plugin postmeta data caused fatal error on revision creation
+* Fixed : Duplicate revision creation on some sites
+* Change : When user clicks into a custom field in Post / Revision editor, disable Submit / Approve / Schedule Revision button until changes are saved 
+
+= 3.5.12 - unreleased =
+* Fixed : Classic Editor - Schedule Revision / New Revision button captioning did not account for time zone difference between server and site
+* Fixed : Notifications were not sent for auto-submitted revisions
+* Fixed : Fatal error if function rvy_revision_statuses() or rvy_revision_base_statuses() is called with non-standard arguments by third party code
+
+= 3.5.11 - 26 Jun 2024 =
+* Compat : PublishPress Permissions - Revision Queue listed some editable posts without edit link
+* API : Filter revisionary_mail supports headers customization
+
+= 3.5.10 - 18 Jun 2024 =
+* Fixed : With plugin option to limit to one revision per post, revision submission could be inappropriately blocked under some conditions
+* Fixed : Edit Revision screen - Delete Revision button functions incorrectly after toggling from Block panel back to publishing panel
+* Fixed : Non-Administrators could not decline revisions
+* Fixed : Block / Classic Editor usage was not correctly detected under some conditions
+* Fixed : Post Editor - "Schedule Revision" button captioning following date selection did not account for time zone difference between site and editing user
+* Fixed : Post Editor - "Schedule Revision" button captioning following date selection was not applied with recent Gutenberg versions
+* Compat : Gutenberg 18.5 - Revision UI was not correctly displayed for revision edit
+* Compat : Disable Gutenberg - Classic Editor mode was not detected under some configurations
+* Compat : WooCommerce - After revision creation in post editor, preview button redirected to dashboard
+* Compat : WP Rocket - Clean post cache on revision publication
+* API : New action hook to support custom columns in Revision Queue table
+* Lang : Removed obsolete German translation, which caused errors on some pages
+
+= 3.5.9 - 7 May 2024 =
+* Fixed : After new revision creation in post editor, View / Edit links fail with PHP warnings on some installations
+* Fixed : Classic Editor - When editing a published post, future date selection followed by "Schedule Revision" button click failed to schedule revision
+* Fixed : Classic Editor (Revision) - Changing Category, Tag, Featured Image or other Meta box did not disable Approve button
+* Fixed : Classic Editor (Revision) - Changing or removing Featured Image did not disable Submit, Approve button
+* Fixed : Revision Queue: Decline link nonce failure ("link expired")
+* Fixed : PHP Warning on revision submission if published page is the child of a parent that has been trashed
+* Compat : PublishPress Authors - Revisors could not submit revisions correctly if role has ppma_edit_post_authors capability
+* Compat : PublishPress Permissions - API to apply Specific Permissions to Revision Queue listing
+* Lang : Various plugin settings captions and one error message were not translated
+
+= 3.5.8.2 - 25 Apr 2024 =
+* Fixed : Nonce failure on revision decline attempts
+* Fixed : Saving with a future date in Classic Editor saves post as Published instead of Scheduled, under some conditions
+* Fixed : With Limit to One Revision option enabled, approving a revision caused a fatal error, under some conditions
+* Fixed : Revision Queue - If multiple bulk actions are applied, confirmation notice from previous actions is repeated
+* Compat : Some plugins conflicted with Edit / Preview links for newly created revision
+* Compat : Nested Pages - Fatal error on bulk deletion of revisions
+
+= 3.5.8.1 - 16 Apr 2024 =
+* Fixed :  If limiting to one active revision per post, deleting a revision before saving it did not restore creation ability on some sites
+
+= 3.5.8 - 12 Apr 2024 =
+* Fixed : Revision Editor hid category selection checkboxes
+* Fixed : New Revision button was missing from Revision Editor sidebar
+* Fixed : Revision Editor did not display Preview Revision button
+* Fixed : Revision Preview top bar styling broken by external CSS on some sites
+* Fixed : Revision Preview top bar styling stuck in cache on some sites
+* Fixed : If limiting to one active revision per post, deleting that revision did not restore ability to create a new one
+* Fixed : Revision Queue - Bulk Decline failed with "link expired" message
+* Fixed : New revisions could become orphaned from main post on WordPress VIP
+
+= 3.5.7 - 4 Apr 2024 =
+* Compat : WordPress 6.5 - Revision editor sidebar did not display date, template UI
+* Feature : Decline link in Revision Queue row, Revision Preview top bar
+* Fixed : Preview of front page revision was not displayed correctly
+* Fixed : Previews of archived revisions did not display custom fields, multiple authors
+* Fixed : Revision preview styling broke third party javascript on some installations
+* Fixed : Classic Editor - Custom Fields metabox was unavailable while editing a revision
+* Fixed : WP-defined revision limit (for past revisions) was not imposed when saving current content as a past revision at pending / scheduled revision publication
+* Fixed : If "Limit to one active revision per post" setting is enabled, deleting a revision on a cached site did not restore ability to create a new revision to replace it
+* Fixed : Possible memory leaks in javascript on Revision edit with Gutenberg editor
+* API : New filter "revisionary_preview_link_type"
+
+= 3.5.6 - 4 Jan 2024 =
+* Feature : New setting Revisions > Settings > Preview > "Modify preview link for better theme compatibility". Some themes require one setting, some require the other.
+* Fixed : ACF - Revision update, preview fails if ACF plugin is active
+* Fixed : Edit Revision - Approve, Submit buttons missing in Gutenberg 17
+* Fixed : PHP 8.2: Warning for dynamic property declaration
+
+= 3.5.5 - 12 Dec 2023 =
+* Compat : Advanced Custom Fields - Prevent invalid filtering of revision ID
+* Fixed : Front page template was not loaded for revision previews of front page
+* Fixed : Revision previews were not loaded correctly on some sites
+* Fixed : Pagination setting on Queue, Archive screens was not stored
+* Fixed : Pagination on Archive screen not applied if Revision Deletion option disabled
+* Fixed : Classic Editor - Revision Status no longer displayed after changing publish time
+* Fixed : Classic Editor - Modified publish time discarded if Submit / Approve clicked before Update Revision
+* Fixed : Classic Editor - Revision Submit button was still (mal)functional when disabled
+* Change : Classic Editor - Separate buttons to Preview changes in progress, View / Approve Saved Revision
+
+= 3.5.4 - 17 Oct 2023 =
+* Fixed : Past Revision previews did not display (since 3.5.3)
+* Fixed : Scheduled Revisions were not published under some configurations
+* Fixed : Custom fields with multiple values stored to the same key were not revisioned correctly
+* Fixed : Improve html validation of Revisions Settings screens, possibly resolving rendering issue on some browsers
+* Change : Screen Options on Revision Queue and Revision Archive to set Revisions per Page (previously used setting from Pages screen)
+* Compat : PublishPress Authors - Default author setting overrides actual revision author
+
+= 3.5.3 - 30 Aug 2023 =
+* Feature : Option to enable deletion of revisions in Revision Archive 
+* Fixed : Category / taxonomy changes were cleared by revision preview, not applied at revision approval
+* Fixed : Revision Archive included autosaves
+* Fixed : PHP 8.1 - Warning for dynamic property creation in revision preview
+
+= 3.5.2 - 17 Aug 2023 =
+* Fixed : Pro - Fatal error on activation if plugin settings were not previously saved (packaging error reverted fix in 3.5.1)
+* Fixed : Revision Edit - No progress caption was shown after Submit button click
+* Fixed : Options screen - html markup error (missing closing div tag)
+* Lang : Updated Spanish, French, Italian translations
+
+= 3.5.1 - 11 Aug 2023 =
+* Fixed : Bedrock - Unable to activate plugin due to three internal libraries missing from GitHub commit
+
+= 3.5 - 10 Aug 2023 =
+* Fixed : Unscheduling a revision using bulk edit in Revision Queue caused it to become inaccessible
+* Compat : Permalink Manager plugin - Suppress permalink modification in Revision edit
+* Change : Change revision deletion captions to clarify that only the revision is deleted
+* Change: Modified internal vendor library structure for shorter paths (lib/vendor)
+* Change: Free plugin is loaded through internal vendor library
+
+= 3.4.1 - 29 Jun 2023 =
+* Fixed : Incorrect admin menu item display if revision submission is disabled for all post types
+
+= 3.4 - 29 Jun 2023 =
+* Feature : Revision Archive screen
+
+= 3.3 - 19 Jun 2023 =
+* Feature : Revisions > Settings > Revision Creation > "Limit to one active revision per post"
+* Fixed : Plugin compat - dashboard_glance_items was improperly filtered
+* Fixed : Revisions were incorrectly attributed to original page author under some conditions
+* Compat : Revision Queue - Work around unidentified plugin conflict inserting inappropriate clauses into our posts query
+* Compat : PublishPress Authors - Author changes in revision were not applied at revision publication
+* Compat : PublishPress Authors - Revision Queue "Revised By" column always showed original post author
+* Compat : Permissions + WordFence - Add Media query was not filtered based on Permissions settings
+* Fixed : Multisite - Some settings UI were not displayed when plugin on network installations when plugin is not activated network-wide 
+* Fixed : Multisite - Settings previously configured for network-wide activation were not displayed on sub-site settings screen even after network deactivation
+* Change : Bump WordPress version requirement to 5.5
+* Change : Bump PHP version requirement to 7.2.5
+* Change : Update vendor libraries based on revised PHP version support, using new internal-vendor structure
+
+= 3.1.13 - 30 Mar 2023 =
+* Fixed : Posts screen - Has Revision caption was not displayed unless "Revision Submission for Unpublished Posts" setting is enabled  
+* Fixed : Settings > Notifications > "Show Notification Log / Buffer" link did not redirect back to Notifications tab
+* Change : Minimum PHP version 7.2.5
+
+= 3.1.12 - 23 Mar 2023 =
+* Fixed : Posts were left with invalid "Has Revision" links after publication or deletion of all their revisions
+* Fixed : If Revision Submission for Unpublished Posts is disabled but revisions of draft posts were previously created, those caused a "Has Revisions" label without displaying the revisions in Queue
+* Fixed : Links to Revision Queue for a specific published post (including "Has Revision" links from Posts listing) failed to list unsubmitted revisions
+* Fixed : Revision Compare > Manage : Non-rendered html tags, incorrect table formatting 
+* Fixed : Compare Past Revisions - invalid link on Preview / Restore button
+* Fixed : Request Deletion link was displayed even if revisions are not enabled for post type
+
+= 3.1.11 - 9 Feb 2023 =
+* Fixed : Revision preview failure under some conditions
+* Fixed : Avoid PHP Warning on Revision Preview if requested revision cannot be loaded
+* Fixed : On Network-wide multisite activations, Settings screen displayed an unrendered html tag 
+* Lang : Update Spanish, French, Italian translations
+
+= 3.1.10 - 22 Dec 2022 =
+* Perf : Improve performance of post revision count, dropdown pages queries
+* Fixed : Revisions were not correctly declined on some cached sites
+
+= 3.1.9 - 15 Dec 2022 =
+* Fixed : Scheduled Revisions missed by WP-Cron were not rescheduled. To disable auto-reschedule, define constant REVISIONARY_DISABLE_WP_CRON_RESTORATION
+* Fixed : Revisions Queue table was missing a "check all" box
+* Fixed : Fatal error on revision approval on some sites
+* Compat : Relevanssi - If filtering is enabled for admin searches, Submitted / Scheduled Revisions are included in search results 
+* Compat : PublishPress Future - Attempted revision of post expiration settings caused unexpected behavior; disable for now
+* API : Classic Editor revision editor supports filter revisionary_submit_revision_metabox_classic
+
+= 3.1.8 - 3 Nov 2022 =
+* Fixed : PHP 8 - Unresponsive elements in post editor due to Javascript loading failure
+* Fixed : Avoid fatal error on plugin activation if loading sequence is non-standard
+* Compat : WP Buddy Rich Snippets - PHP error "The script tried to modify a property on an incomplete object" on revision creation
+
+= 3.1.7 - 12 Oct 2022 =
+* Feature : Revision submission and approval handles author selection
+* Fixed : Plugin review request dismissal was not applied
+* Fixed : Gutenberg Editor - for non-English locales, future date selection did not enable Scheduled Revision creation
+* Fixed : Gutenberg Editor - when editing an existing Scheduled Revision, publish date caption shows "Immediately"
+* Fixed : PHP Notice "Trying to get property 'post_type' of non-object" when another plugin hooks into "use_block_editor_for_post" filter
+* Lang : Update Spanish, French, Italian translations
+
+= 3.1.6 - 31 Aug 2022 =
+* Change : Support detection / indication of custom WP-Cron implementations when DISABLE_WP_CRON is set true
+
+= 3.1.5 - 30 Aug 2022 =
+* Fixed : Revision Submission from Gutenberg editor failed on some sites
+* Fixed : Bulk-deleted revisions were not removed from revision count
+* Fixed : PHP Warning for invalid regex if post type's REST registration or request has an invalid route string
+
+= 3.1.4 - 17 Aug 2022 =
+* Fixed : Approve Revision button in Gutenberg editor did not work
+* Fixed : Submit Revision button in Gutenberg editor failed under some conditions
+* Fixed : Detection of DISABLE_WP_CRON constant
+* Fixed : Administrators did not receive revisions submission notifications under some configurations
+* Fixed : Revision Queue column ordering / filtering links didn't work as expected in some use cases
+* Fixed : When previewing a scheduled revision that has been published, "Edit" link in top bar had invalid URL
+* Fixed : If Pro plugin is activated, deactivation of free plugin hides all revisions
+* Compat : Yoast SEO: PHP Notices on revision creation / submission
+* Lang : Update Spanish, Italian translations
+
+= 3.1.2 - 7 Jul 2022 =
+* Fixed : Filter 'use_block_editor_for_post' was not recognized in detecting block editor disable
+* Fixed : Revision Edit in Gutenberg: Enable non-Editors to set requested publish date
+* Fixed : Scheduled revisions were not published on some installations
+* Change : Allow WP-Cron publication method to be disabled for scheduled revisions
+* Feature : Option to Delete Editorial Comments on revision approval
+* Feature : Option to disable revisions per post type
+* Feature : Instance protection library warns about non-standard plugin folder, unnecessary free plugin activation
+* Feature : Plugin review request
+* Feature : Pro promo sidebar on settings screen
+
+= 3.1.1 - 8 Jun 2022 =
+* Fixed : Revision scheduling left a future date selection in editor. If the post is updated again without reloading the editor, it is unpublished until the selected date
+
+= 3.1 - 1 Jun 2022 =
+* Feature : Revision Edit - Administrators and editors have approval button for unsubmitted revisions
+* Feature : Revision Queue - Bulk Edit includes "Decline" action to return "Submitted" revisions back to "Not Submitted"
+* Feature : Revision Queue - New "Copy" row action
+* Compat : PublishPress Permissions - fatal error loading Customizer
+* Compat : PublishPress Authors - Revision submission failed
+* Compat : PublishPress Permissions - Fatal error loading Customizer (also requires Permissions 3.7.6)
+* Fixed : Scheduled Revisions fail on some sites
+* Fixed : Editors could not manage unsubmitted revisions without manage_unsubmitted_revisions capability, even if "Additional role capability required" setting disabled
+* Fixed : Non-public Post types had non-functional revision preview links, revision publication redirects
+* Fixed : Edit Revision - alignment and spacing in revision status sidebar
+* Fixed : Edit Revision - submit / approve buttons were re-enabled after toggle from Block to Post tab
+* Fixed : Revision Queue - checkbox column did not have a "select all" box
+
+= 3.0.16 - 20 Apr 2022 =
+* Fixed : Post Editor - New Revision button was not displayed 
+* Lang : Some translations did not load
+* Fixed : Edit Revision with Classic Editor - submit button not displayed for some custom post types
+
+= 3.0.15 - 31 Mar 2022 =
+* Fixed : Scheduled Revisions failed on WP 5.9 if WP Cron scheduling was disabled in Revisions settings
+
+= 3.0.14 - 30 Mar 2022 =
+* Fixed : Output variable escaping, other coding standard improvements
+
+= 3.0.13 - 21 Mar 2022 =
+* Fixed : Revision submission in Classic Editor caused "Undefined" link next to "Preview" link
+* Fixed : New revisions created with "Auto-submit" option had wrong date (and listing order) in Revision Queue
+* Fixed : PHP error on revision approval under some configurations
+* Fixed : Dashboard Activity widget: Scheduled revisions were not included in Publishing Soon list
+* Fixed : API: wp_after_insert_post action was not applied at revision publication
+* Compat : Divi - Revision preview bar not visible on front end
+* Compat : Divi - Classic Editor setting did not trigger correct Revisions UI
+* Compat : Custom post types - revision submission button not displayed in some configurations
+* API: New filters pp_revisions_option_pending_revision_update_post_date, ​pp_revisions_option_pending_revision_update_modified_date, ​pp_revisions_option_scheduled_revision_update_post_date​, ​pp_revisions_option_scheduled_revision_update_modified_date
+
+= 3.0.12 - 3 Mar 2022 =
+* Feature : Edit link in post editor after revision creation / scheduling
+* Change : Option to auto-submit revisions created by users who can publish the main post
+* Change : Option to publish scheduled revisions using WP-Cron
+* Fixed : Scheduled publication of revisions fails on WP Engine if caching enabled (fix by enabling WP Cron scheduling)
+* Fixed : WP 5.9 - After editing a revision, approval button remained disabled after revision update
+* Fixed : New revisions were not listed in Revision Queue or linked to Preview button under some conditions
+* Fixed : Compare Revisions: error if ACF is active on a PHP 8 installation
+* Fixed : Revision Queue - column headers (to set sort field) had a bad link
+
+= 3.0.10 - 10 Feb 2022 =
+* Fixed : WordPress 5.9 - When editing a submitted revision, Save button was hidden
+* Fixed : Revision Compare did not load on some sites
+* Fixed : Option "Editing others' revisions requires role capability" was not applied
+
+= 3.0.9 - 27 Jan 2022
+* Compat : WordPress 5.9 - Revisions could not be updated using Gutenberg editor
+
+= 3.0.8 - 26 Jan 2022
+* Compat : WordPress 5.9 - Fatal error adding / editing posts (work around WP hooking late-defined function _disable_block_editor_for_navigation_post_type)
+
+= 3.0.7 - 5 Jan 2022 =
+* Fixed : Revision status changes not updated on sites running an object cache
+* Fixed : Revision deletion from within editor left an inaccessible trashed revision and redirected to Edit Posts. Now deletes revision and redirects to Revision Queue.
+* Fixed : manage_unsubmitted_revisions capability was required without any hint in plugin settings; Now not required unless configured in Revisions > Settings
+* Fixed : Classic Editor - Javascript error breaks plugin compatibility
+* Fixed : Gutenberg Editor - Top margin for Preview button following revision submission
+* Fixed : Compare screen - could not approve revisions
+* Fixed : Compare screen - ampersands in user display name were displayed with html encoding
+* Fixed : Revision Queue - Revisions from deactivated post types were listed with invalid Edit, Delete links and a blank Post Type
+* Fixed : Compare Revisions - Preview / Restore button for past revisions linked back to Compare screen
+* Fixed : Input sanitization consistency
+* Change : Revision preview top bar styling
+* Compat : LifterLMS - LLMS query filters broke Revision Queue
+* Compat : WPML - Database error in Revision Queue
+* Fixed : Revision Queue: PHP error on bulk action under some site configurations
+
+= 3.0.6 - 29 Nov 2021 =
+* Fixed : Edit Revision - revisions could not be updated unless SCRIPT_DEBUG is enabled on the site
+* Fixed : Revisions could not be scheduled if Settings > Revisions > Revision Submission is disabled
+
+= 3.0.5 - 23 Nov 2021 =
+* Fixed : Published custom post types not listed to Revisors under some configurations (Permissions integration requires Permissions 3.6.4)
+* Fixed : Multisite - network-wide settings screens were non-functional
+
+= 3.0.4 - 19 Nov 2021 =
+* Fixed : New Revision button not displayed in Admin Bar
+* Fixed : Revision Queue: revisions not listed in My Activity view
+
+= 3.0.3 - 18 Nov 2021 =
+* Fixed : Revisions Queue empty on sites with a large number of published posts
+* Compat : WooCommerce - Hide Product Variations, Linked Products tabs when editing a Product Revision
+
+= 3.0.2 - 15 Nov 2021 =
+* Compat : PublishPress Permissions - Revisions Submission permissions did not correctly adjust Edit Posts / Pages listing in some configurations (also requires Permissions 3.6.3)
+* Compat : The Events Calendar - Revisions could not be submitted in Classic Editor
+* Fixed : Classic Editor - Schedule button was incorrectly displayed (leading to failed scheduling attempt) if a single time element is changed followed by OK button
+* Fixed : Scheduled Revisions could not be updated in Gutenberg editor
+* Fixed : Admin Bar button "New Revision" was displayed even if Submitted Revisions are disabled
+* Fixed : Revision Queue: bulk deletion did not reduce revision counts
+* Fixed : Duplicate page selection dropdown in Quick Edit and other instances of wp_dropdown_pages()
+* Fixed : Invalid page hierarchy and broken Pages admin if a past revision that was originally submitted through the Revisions plugin is restored 
+* Fixed : Revision Preview was missing "Approve" button caption if revision is of an unpublished post
+* Change : Revisions Settings - clarify some captions
+
+= 3.0.1 - 10 Nov 2021 =
+* Fixed : Revisions created using Revisions 2.x were not listed in Revision Queue until plugin de/re-activation
+* Fixed : Front Page setting was cleared at revision submission on some sites
+* Fixed : Front Page setting dropdown in Settings > Reading included revisions
+* Fixed : Classic Editor : Schedule Revisions could not be submitted
+* Fixed : Classic Editor : Schedule button was displayed incorrectly while selecting a future date for scheduled revision
+* Compat : Gutenberg plugin - Edit Revision screen crashed on update attempt
+* API: Allow redirect to be disabled on revision creation
+
+= 3.0 - 9 Nov 2021 =
+* Feature : New revision submission mechanism: create an unsubmitted revision first instead of editing existing post. Edit revision directly, then submit for scheduling or publication.
+* Change : Revisions UI in Post / Revision editor
+* Feature : Admin Bar includes "New Revision" button
+* Change : Revision Queue filter captions
+* Compat : Permissions - revise_others_posts, revise_others_pages, etc. capabilties are equivalent to list_others capabilities in allowing uneditable items to be listed
+* Change : Include upload_files capability in the Revisor role
+
+= 2.6.3 - 11 Oct 2021 =
+* Fixed : Classic Editor - Error submitting a pending or scheduled revision
+
+= 2.6.2 - 7 Oct 2021 =
+* Change : Maintenance queries run at plugin activation to convert version 3.0 revisions back to 2.6 encoding
+* API : Support for WPML Translation Management support in Pro version
+
+= 2.6.1 - 15 Jul 2021 =
+* Fixed : Pending / Scheduled Revisions could become disassociated from main post due to third party plugin interactions
+* Compat : Permissions - Specific Permissions were not applied for editing / approval of custom post types under some conditions 
+* Fixed : Revision Update triggered redirect back to Revision Queue even if "Confirmation redirect on Revision Update" setting disabled
+* Fixed : Users without full editing capabilities could not submit a pending revision with a future date selection
+* Fixed : Revision Previews were cached on some browsers
+* Fixed : Preview of front page revisions did not trigger front page template display
+* Fixed : Bulk Approval of revisions failed / caused PHP Notice on some sites due to post type not being registered early enough
+* Fixed : Pending Revision checkbox default selection from 'revisionary_default_pending_revision' filter application did not trigger revision submission 
+* Lang : Revision Queue - Remove sample English translation "My Revisionz"
+
+= 2.6 - 23 Jun 2021 =
+* Fixed : Background fatal error on some sites on revision scheduling
+* Fixed : Scheduled Page Revisions - If published page has a non-default template which was not changed in the revision, the Compare and Edit Revision screens indicated a change to default template. This change was not actually applied unless the stored revision was updated prior to publication.   
+* Feature : Option to send notifications on Revision Update
+* Feature : Option to redirect to confirmation screen after Revision Update
+* Compat : Custom Permalinks plugin
+* API : New filters allow submission confirmation message to be customized: revisionary_submit_message_links, revisionary_submit_message, revisionary_schedule_message_links, revisionary_schedule_message
 
 = 2.5.5 - 26 May 2021 =
 * Compat : Google Web Stories - Loss of story data due to clearance of post_content_filtered column
@@ -334,7 +947,7 @@ Follow PublishPress on [Facebook](https://www.facebook.com/publishpress), [Twitt
 * Lang : Correct textdomain on numerous translation calls
 * Lang : Improve translation string construction
 * Lang : Support translation of Revisor role name
-* Lang: Updated language files
+* Lang : Updated language files
 
 = 2.1.7 - 13 Jan 2020 =
 * Fixed : Excessive resource usage with some caching solutions
@@ -403,7 +1016,7 @@ Follow PublishPress on [Facebook](https://www.facebook.com/publishpress), [Twitt
 * Fixed : Classic Editor - Invalid Revisions > Browse link displayed to Revisors
 * Compat : Classic Editor plugin - with "Allow users to switch editors" enabled, non-default editor did not have correct javascript loaded for Revisions
 * Compat : On themes that use a fixed position header, display preview top bar above header
-* Compat : PressPermit Pro - revision preview could not be viewed by Contributors under some configurations 
+* Compat : PressPermit Pro - revision preview could not be viewed by Contributors under some configurations
 * Fixed : On standard Compare Revisions screen (for past revisions), Preview and Manage button links did not update with slider selection change
 * Fixed : Pending, Schedule Revision notification - invalid preview link in some emails
 * Fixed : Trashed revisions were not identified as revisions in Edit Posts listing

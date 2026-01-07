@@ -119,6 +119,8 @@ function submitPersonActivity ( $activity, $data ) {
 
 	$response = getAPIResponse( $endpoint, 'POST', $requestBody );
 
+
+
 	return $response;
 
 }

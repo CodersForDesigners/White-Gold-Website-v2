@@ -6,7 +6,7 @@
  *
  *
  */
-
+const REGION = 'kl';
 \BFS\CMS\WordPress::setupContext();
 
 // If a post revision or preview is being viewed, and the user is not authorized to view it, simply return to the home page

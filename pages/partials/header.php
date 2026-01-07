@@ -35,7 +35,6 @@ $languageAttributes = WordPress::$isEnabled ? get_language_attributes() : 'lang=
 http_response_code( Router::$httpResponseCode );
 
 $contactNumbersForRegions = PHONE_NUMBERS;
-
 ?>
 <!doctype html>
 <html <?= $languageAttributes ?>>
@@ -47,10 +46,7 @@ $contactNumbersForRegions = PHONE_NUMBERS;
 <?php if ( WordPress::$isEnabled and ! WordPress::$onlySetupContext ) wp_body_open(); ?>
 
 <?= WordPress::get( 'arbitrary_code_after_body_opening' ) ?? <<<ARB
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLN9437"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 ARB
 ?>
 

@@ -76,9 +76,16 @@
     width: 48%;
 }
 @media (min-width: 1480px) {
+
+.about-section .col-lg-5{
+align-self: center;
+}
+
+
+
     .blue-box {
-        margin-top: 83px !important;
-        margin-left: -138px !important;
+        margin-top: 0px !important;
+        margin-left: -50px !important;
         width: 500px;
         padding: 40px;
         background-color: #0032a0;
@@ -111,7 +118,7 @@
     }
 }
 .custom-tab-mobile .accordion-button {
-    font-size: 16px;
+    font-size: 18px;padding-left:15px;
     border-radius: 7px !important;
     font-weight: 800;
     background-color: #f1f1f1;
@@ -174,7 +181,7 @@
     top: 5px;
 }
 .slider-desktop .landing-carousel-section p {
-    padding-right: 30%;
+    padding-right: 25%;
 }
 .pl-30 {
     padding-left: 30px;
@@ -373,14 +380,14 @@ p {
     }
     .branch-slider .slick-prev {
         position: absolute;
-        left: 35%;
+        left: 30%;
         top: 106%;
         z-index: 9999;
     }
     .branch-slider .slick-next {
         position: absolute;
         top: 106%;
-        right: 36%;
+        right: 31%;
         z-index: 9999;
     }
     .slider .slick-next {
@@ -480,12 +487,12 @@ p {
         margin: auto;
     }
     .blue-box {
-        margin-top: 50px;
+        margin-top: 0px;
         margin-left: -61px;
         width: 500px;
         padding: 40px;
         background-color: #0032a0;
-        margin-bottom: 50px;
+        margin-bottom: 0px;
     }
     .middle-logo-section img {
         width: 100px;
@@ -494,7 +501,7 @@ p {
         bottom: 20px;
     }
     .service-box2 {
-        height: 286px;
+        height: 100%;
     }
     .box-testimonials .testimonial-heading {
         position: relative;
@@ -719,7 +726,7 @@ p {
         padding: 11px;
         background-color: #fff;
         border-radius: 10px;
-        height: 280px;
+        height: 100%;
     }
     .service-box2 img {
         text-align: left;
